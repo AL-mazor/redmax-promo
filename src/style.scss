@@ -1,0 +1,2105 @@
+@import 'css/variables';
+@import 'css/mixins';
+@import 'css/normalize/import-now';
+@import 'css/swiper';
+@import 'css/fonts';
+@import 'css/callback';
+
+/*********************
+*** General
+**********************/
+.container {
+	max-width: 1600px;
+	margin: 0 auto;
+	position: relative;
+	@include respond-to($lg-desk) {
+		max-width: 1200px;
+	}
+	@include respond-to($sm-desk) {
+		padding: 0 30px;
+	}
+	@include respond-to($tab) {
+		padding: 0 25px;
+	}
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+body {
+	color: $bl;
+	font-family: Lato;
+	position: relative;
+	@include respond-to($lg-desk) {
+		font-size: 16px;
+	}
+	@include respond-to($lg-mob) {
+		font-size: 14px;
+	}
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+p {
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {margin: 0;}
+
+.btn {
+	display: inline-block;
+	color: $wh;
+	//font-weight: 700;
+	text-align: center;
+	cursor: pointer;
+	transition: .2s;
+	&-sm {
+		font-size: 18px;
+		line-height: 40px;
+		border-radius: 20px;
+		height: 40px;
+		width: 260px;
+		box-shadow: 0 0 10px 0 rgba(35, 71, 95, 0.5);
+		@include respond-to($sm-desk) {
+			font-size: 16px;
+			line-height: 38px;
+			height: 38px;
+		}
+		@include respond-to($tab) {
+			width: 225px;
+			height: 36px;
+			line-height: 36px;
+		}
+	}
+	&-lg {
+		font-size: 24px;
+		line-height: 50px;
+		height: 50px;
+		border-radius: 25px;
+		width: 320px;
+		@include respond-to($lg-desk) {
+			font-size: 22px;
+			height: 46px;
+			line-height: 46px;
+		}
+		@include respond-to($sm-desk) {
+			font-size: 20px;
+			height: 42px;
+			line-height: 42px;
+		}
+		@include respond-to($tab) {
+			height: 40px;
+			line-height: 40px;
+			width: 280px;
+		}
+		@include respond-to($lg-mob) {
+			font-size: 16px;
+			height: 38px;
+			line-height: 38px;
+			width: 100%;
+			max-width: 250px;
+		}
+	}
+	&-blue {
+		background-color: $blue;
+  		box-shadow: 0px 0px 10px 0px rgba(35, 71, 95, 0.5);
+		&:hover {background-color: $dark-blue;}
+	}
+	&-red {
+		background-color: $red;
+		&:hover {
+			background-color: $dark-red;
+  			box-shadow: 0px 0px 15px 0px rgba(239, 26, 30, 0.9);
+		}
+	}
+	&-submit {
+		border: none;
+		padding: 0;
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+.simple-btn {
+	display: inline-block;
+	//text-decoration: underline;
+	font-size: 24px;
+	color: $red;
+	cursor: pointer;
+	border-bottom: 1px solid $red;
+	padding-bottom: 1px;
+	@include respond-to($lg-desk) {
+	   font-size: 22px;
+	}
+	@include respond-to($sm-desk) {
+		font-size: 20px;
+	}
+	@include respond-to($lg-mob) {
+		font-size: 18px;
+	}
+}
+
+.btn-row {
+	margin-top: 2em;
+}
+
+.info-block {
+	position: relative;
+	&--title {
+		font-size: 30px;
+		font-weight: 700;
+		color: $blue;
+		text-transform: uppercase;
+		margin: 0 0 .7em;
+		@include respond-to($lg-desk) {
+			font-size: 26px;
+		}
+		@include respond-to($sm-desk) {
+			font-size: 22px;
+		}
+		@include respond-to($tab) {
+			font-size: 20px;
+		}
+		@include respond-to($lg-mob) {
+			font-size: 18px;
+			margin: 0 0 .3em;
+		}
+	}
+	&--desc {
+		margin: 0;
+	}
+}
+
+.circle {
+	display: block;
+	position: absolute;
+	width: 20px; height: 20px;
+	border-radius: 50%;
+	background-color: rgba(35, 71, 95, .1);
+	@include respond-to($tab) {
+		width: 15px; height: 15px;
+	}
+	@include respond-to($lg-mob) {
+		width: 12px; height: 12px;
+	}
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 7px; left: 7px;
+		width: 6px; height: 6px;
+		border-radius: 50%;
+		background-color: $red;
+		@include respond-to($tab) {
+			top: 5px; left: 5px;
+			width: 5px; height: 5px;
+		}
+		@include respond-to($lg-mob) {
+			top: 4px; left: 4px;
+			width: 4px; height: 4px;
+		}
+	}
+}
+
+.heading-block {
+	&-sm {
+		max-width: 650px;
+		@include respond-to($sm-desk) {
+			max-width: 560px;
+		}
+	}
+	&-lg {
+		max-width: 735px;
+		@include respond-to($sm-desk) {
+			max-width: 680px;
+		}
+	}
+	&-center {
+		margin: 0 auto;
+		text-align: center;
+	}
+	&--title {
+		display: block;
+		font-size: 48px;
+		color: $blue;
+		margin-bottom: .5em;
+		@include respond-to($lg-desk) {
+			font-size: 44px;
+		}
+		@include respond-to($sm-desk) {
+			font-size: 40px;
+		}
+		@include respond-to($tab) {
+			font-size: 32px;
+		}
+		@include respond-to($lg-mob) {
+			font-size: 28px;
+		}
+	}
+	&--subtitle {
+		display: block;
+	}
+}
+/*********************
+*** Header
+**********************/
+.header {
+	position: relative;
+	z-index: 1;
+	height: 140px;
+	transition: height .4s, background-color .1s;
+	@include respond-to($lg-desk) {
+		height: 120px;
+	}
+	@include respond-to($tab) {
+		height: 80px;
+		transition: none;
+	}
+	@include respond-to($lg-mob) {
+		height: 75px;
+	}
+	.img-logo {
+		float: left;
+		//margin-bottom: 0;
+		margin-top: 20px;
+		transition: .2s;
+		@include respond-to($lg-desk) {
+			margin-top: 0;
+		}
+		@include respond-to($sm-desk) {
+			width: 180px;
+			height: 120px;
+		}
+		@include respond-to($tab) {
+			width: 160px;
+			height: 80px;
+		}
+		@include respond-to($lg-mob) {
+			width: 125px;
+			height: 75px;
+		}
+	}
+	&--nav {
+		float: right;
+		//padding: 50px 0;
+		margin-top: 70px;
+		transition: .3s;
+		@include respond-to($lg-desk) {
+			margin-top: 50px;
+		}
+		@include respond-to($tab) {
+			margin-top: 24px;
+		}
+		&:after {@include clearfix;}
+		.btn {
+			float: left;
+			@include respond-to($lg-mob-port) {
+				display: none;
+			}
+		}
+	}
+	
+
+	// Scrolling header
+	&-scrolling {
+		position: fixed;
+		z-index: 8;
+		top: 0; left: 0;
+		width: 100%;
+		width: 100vw;
+		height: 90px;
+		background-color: rgba(255, 255, 255, .8);
+		@include respond-to($tab) {
+			height: 80px;
+		}
+		@include respond-to($lg-mob) {
+			height: 75px;
+		}
+		// @include respond-to($lg-mob-land) {
+		// 	height: 0;
+		// 	overflow: hidden;
+		// }
+		.img-logo {
+			height: 70px;
+			margin-top: 10px;
+			@include respond-to($tab) {
+				height: 80px;
+				margin-top: 0;
+			}
+			@include respond-to($lg-mob) {
+				height: 75px;
+				margin-top: 0;
+			}
+		}
+		.header--nav {
+			margin-top: 25px;
+		}
+	}
+	&-active {
+		position: fixed;
+		z-index: 8;
+		top: 0; left: 0;
+		width: 100%;
+		height: 286px;
+		transition: none;
+		@include gradient;
+		.primary-nav {
+			display: block;
+		}
+		@include respond-to($lg-mob) {
+			height: 281px;
+		}
+	}
+}
+
+.burger {
+	display: none;
+	@include respond-to($tab) {
+		position: relative;
+		display: block;
+		float: right;
+		width: 30px; height: 20px;
+		margin-top: 8px;
+		cursor: pointer;
+		margin-left: 22px;
+
+		i {
+			position: absolute;
+			width: 100%;
+			height: 1px;
+			background-color: $red;
+			left: 0;
+			&:nth-child(1) {
+				top: 0;
+			}
+			&:nth-child(2) {
+				top: 50%;
+			}
+			&:nth-child(3) {
+				bottom: 0;
+			}
+		}
+	}
+	@include respond-to($lg-mob-port) {
+		margin-left: 0;
+	}
+	@include respond-to($lg-mob) {
+		width: 30px; height: 18px;
+		margin-top: 6px;
+	}
+
+	&-active {
+		@include respond-to($tab) {
+			i {
+				&:nth-child(1), &:nth-child(3) {
+					top: 8px;
+				}
+				&:nth-child(1) {
+					transform: rotate(45deg);
+				}
+				&:nth-child(3) {
+					transform: rotate(-45deg);
+				}
+				&:nth-child(2) {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.img-logo {
+	background-image: url(img/logo.png);
+	width: 280px; height: 115px;
+	@include bg-contain;
+}
+
+.text-logo {
+	font-family: Code;
+	display: block;
+	font-size: 120px;
+	font-weight: 700;
+	text-transform: uppercase;
+	@include respond-to($lg-desk) {
+		font-size: 110px;
+	}
+	@include respond-to($sm-desk) {
+		font-size: 100px;
+	}
+	@include respond-to($tab) {
+		font-size: 80px;
+	}
+	@include respond-to($lg-mob) {
+		font-size: 70px;	
+	}
+}
+
+.highlight {
+	color: $red;
+}
+
+.primary-nav {
+	font-size: 0;
+	float: left;
+	@include respond-to($tab) {
+		display: none;
+		position: absolute;
+		top: 80px;
+		width: 100%;
+		left: 0;
+	}
+	@include respond-to($lg-mob) {
+		top: 75px;
+	}
+
+	//height: 70px;
+	&--item {
+		display: inline-block;
+		font-size: $base-font-size;
+		vertical-align: middle;
+		margin-right: 28px;
+		@include respond-to($sm-desk) {
+			margin-right: 18px;
+		}
+		@include respond-to($tab) {
+			width: 100%;
+			padding-left: 25px;
+			margin-right: 0;
+			border-bottom: 1px solid rgba(170, 170, 170, .2);;
+			&:first-child {
+				border-top: 1px solid rgba(170, 170, 170, .2);;
+			}
+			//box-sizing: border-box;
+		}
+		a {
+			height: 40px;
+			line-height: 40px;
+			color: $blue;
+			&:hover {
+				color: $red;
+			}
+		}
+	}
+}
+
+/*********************
+*** Page Overlay
+**********************/
+
+.page-overlay {
+	color: $blue;
+	position: relative;
+	min-height: 925px;
+	height: 100vh;
+	margin-top: -140px;
+	padding-top: 10%;
+	background-image: url(img/page-overlay-bg.jpg);
+	@include bg-cover;
+	background-position: center 70px;
+	@include respond-to($lg-desk) {
+		min-height: 760px;
+		padding-top: 140px;
+		margin-top: -120px;
+	}
+	@include respond-to($sm-desk) {
+		padding-top: 13%;
+	}
+	@include respond-to($tab) {
+		height: 30vh;
+		min-height: 660px;
+		margin-top: -80px;
+	}
+	@include respond-to($lg-mob) {
+		height: 100vh;
+		min-height: 650px;
+		margin-top: -75px;
+	}
+	@include respond-to($lg-mob-port) {
+		padding-top: 130px;
+	}
+	@include respond-to($lg-mob-land) {
+		padding-top: 80px;
+	}
+	
+	svg {
+		position: absolute;
+	  	bottom: 0;
+	  	width: 100%;
+	  	height: 200px;
+	  	@include respond-to($tab) {
+			display: none;
+		}
+	}
+	/* &:before, &:after {
+	    content: '';
+	    display: block;
+	    position: absolute;
+	    width: 100%;
+	    height: 6px;
+	    background: #000;
+	    bottom: 0;
+	} */
+	.gradient {
+		//content: '';
+		display: block;
+		position: absolute;
+		z-index: -1;
+		width: 100%; height: 100%;
+		top: 0; left: 0;
+		@include gradient;
+	}
+	.text-logo {
+		//margin: .3em 0;
+	}
+	&--inner {
+		max-width: 1140px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	&--subtitle {
+		display: block;
+		font-size: 48px;
+		font-weight: 700;
+		margin-bottom: .8em;
+		@include respond-to($lg-desk) {
+			font-size: 44px;
+		}
+		@include respond-to($sm-desk) {
+			font-size: 36px;
+		}
+		@include respond-to($tab) {
+			font-size: 28px;
+		}
+		@include respond-to($lg-mob) {
+			font-size: 22px;
+		}
+	}
+	.btn {
+		width: 450px;
+		@include respond-to($tab) {
+			width: 350px;
+		}
+		@include respond-to($lg-mob) {
+			width: 100%;
+			max-width: 275px;
+		}
+	}
+}
+
+.tv-tuner {
+	z-index: 1;
+	position: absolute;
+	bottom: -300px; left: 50%;
+	width: 600px;
+	height: 670px;
+	margin-left: -300px;
+	background-image: url(img/devices-tv-tuner.png);
+	@include bg-contain;
+	@include respond-to($lg-desk) {
+        bottom: -220px;
+	    width: 450px;
+	    height: 500px;
+	    margin-left: -250px;
+	}
+	@include respond-to($sm-desk) {
+		bottom: -150px;
+	    width: 420px;
+    	height: 470px;
+    	margin-left: -230px;
+	}
+	@include respond-to($tab) {
+	    bottom: -110px;
+		width: 380px;
+		height: 430px;
+		margin-left: -200px;
+	}
+	@include respond-to($lg-mob-port) {
+		width: 100%; 
+		height: 60%;
+		//padding-top: 115%;
+		margin-left: -54%;
+	}
+}
+
+/*********************
+*** Offers
+**********************/
+
+.offers {
+	padding: 48px 0;
+	@include respond-to($tab) {
+		padding-top: 100px;
+	}
+	@include respond-to($lg-mob) {
+		padding-top: 120px;	
+	}
+	.row:first-of-type {
+		margin-bottom: 100px;
+		@include respond-to($tab) {
+			margin-bottom: 75px;
+		}
+		@include respond-to($lg-mob) {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.offer {
+	padding-left: 35px;
+	//width: 475px;
+	&:nth-child(odd) {
+		float: left;
+	}
+	&:nth-child(even) {
+		float: right;
+		@include respond-to($lg-mob-port) {
+			float: left;
+		}
+	}
+	@include respond-to($lg-mob) {
+		margin-bottom: 25px;	
+		padding-left: 30px;
+	}
+	&--title {
+		
+	}
+	.circle {
+		top: 8px; left: 0;
+		@include respond-to($lg-desk) {
+			top: 5px;
+		}
+		@include respond-to($tab) {
+			top: 4px;
+		}
+	}
+}
+
+/*********************
+*** About Us
+**********************/
+
+.about-us {
+	padding: 130px 0;
+	background: #f5f5f5; /* Old browsers */
+	box-shadow: 0 0 32px 0 rgba(35, 71, 95, 0.17);
+	@include gradient;
+
+	@include respond-to($lg-desk) {
+		padding: 100px 0;
+	}
+	@include respond-to($tab) {
+		padding: 80px 0;
+	}
+	@include respond-to($lg-mob) {
+		padding: 60px 0;
+	}
+	&--title {
+		font-size: 30px;
+		color: $blue;
+		margin-bottom: .3em;
+		@include respond-to($lg-desk) {
+	        font-size: 28px;
+		}
+		@include respond-to($tab) {
+			font-size: 22px;
+			text-align: center;
+		}
+		@include respond-to($lg-mob) {
+			font-size: 20px;
+		}
+		.highlight {
+			font-size: 48px;
+			@include respond-to($lg-desk) {
+	        	font-size: 46px;
+			}
+			@include respond-to($tab) {
+				font-size: 42px;
+			}
+			@include respond-to($lg-mob) {
+				font-size: 38px;
+			}
+		}
+		
+	}
+	&--text {
+		margin-bottom: 2em;
+	}
+	.btn-lg {
+		@include respond-to($lg-mob) {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	&--tv {
+		position: absolute;
+		top: 0; right: 0;
+		width: 800px; height: 520px;
+		img {width: 100%;}
+		@include respond-to($lg-desk) {
+	        top: 40px;
+		    width: 600px;
+		    height: 380px;
+		}
+		@include respond-to($sm-desk) {
+			width: 480px;
+		}
+		@include respond-to($tab) {
+			display: none;
+		}
+	}
+	&--phone {
+		position: absolute;
+		top: 30px; right: 40px;
+		width: 240px; height: 550px;
+		img {width: 100%;}
+		@include respond-to($lg-desk) {
+	        top: 80px;
+			right: 40px;
+			width: 180px;
+			height: 400px;
+		}
+		@include respond-to($sm-desk) {
+			width: 130px;
+		}
+		@include respond-to($tab) {
+			display: none;
+		}
+	}
+}	
+
+.stats {
+	font-size: 0;
+	margin-bottom: 45px;
+	&--item {
+	    box-sizing: content-box;
+	    font-size: 18px;
+	    min-height: 7.5em;
+	    width: 140px;
+	    display: inline-block;
+	    padding: 0 calc(33.33337% - 158.8888px);
+	    border-right: 1px solid rgba(0, 0, 0, 0.2);
+	    vertical-align: top;
+	    @include respond-to($lg-desk) {
+	        font-size: 16px;
+		}
+		@include respond-to($tab) {
+			width: 20%;
+		    padding: 0px calc(10% - 2px);
+		}
+		@include respond-to($lg-mob-land) {
+		    width: 22%;
+    		padding: 0px calc(8.7% - 2px);
+		}
+		@include respond-to($sm-mob-land) {
+			width: 25%;
+			padding: 0 calc(6.5% - 2px);
+		}
+		@include respond-to($lg-mob) {
+			//width: 96px;
+			//padding: 0 calc(33.33337% - 115.6666667px);
+			
+			min-height: 5em;
+			//width: 120px;
+		}
+		@include respond-to($lg-mob-port) {
+			width: 27%;
+			padding: 0 calc(5% - 2px);
+			//box-sizing: border-box;
+			//padding: 0 calc(33.3333337% - 99.6px);
+		}
+		//@include respond-to($lg-mob-land) {}
+		@include respond-to($sm-mob) {
+			width: 28%;
+			padding: 0 calc(4% - 2px);
+		}
+		&:first-child {padding-left: 0;}
+		&:last-child {
+			padding-right: 0;
+			border-right: none;
+		}
+	}
+	&--num, &--text {display: block;}
+	&--num {
+		font-size: 36px;
+		margin-bottom: .9em;
+		color: $blue;
+		@include respond-to($lg-desk) {
+	        font-size: 32px;
+	        margin-bottom: .75em;
+		}
+		@include respond-to($tab) {
+	        font-size: 26px;
+	        margin-bottom: .75em;
+		}
+		@include respond-to($lg-mob) {
+			font-size: 22px;
+		}
+		@include respond-to($sm-mob) {
+			font-size: 20px;
+		}
+	}
+	&--text {
+		@include respond-to($lg-mob) {
+			font-size: 12px;
+		}
+		@include respond-to($sm-mob) {
+			font-size: 10px;
+		}
+	}
+}
+
+.btn-row {
+	.simple-btn {
+		margin-left: 1.5em;
+		@include respond-to($sm-desk) {
+			margin-left: .7em;
+		}
+		@include respond-to($tab) {
+			margin-top: 1em;
+			margin-left: 0;
+			//margin-left: 3em;
+		}
+		@include respond-to($lg-mob-port) {
+			margin-left: 0;
+			//margin-top: 1em;
+		}
+	}
+	@include respond-to($tab) {
+		text-align: center;
+		width: 420px;
+		margin: 0 auto;
+	}
+	@include respond-to($lg-mob) {
+		width: 100%;
+	}
+}
+/*********************
+*** Videos
+**********************/
+#videos {
+	overflow: hidden;
+}
+.video-block {
+	float: left;
+	padding-bottom: 37.5%;
+	position: relative;
+	width: 100%;
+	//font-size: 0;
+	iframe {
+		position: absolute;
+		left: 0;
+		width: 100%;
+	}
+	&-main {
+		width: 66.66666667%;
+		@include respond-to($tab) {
+			width: 100%;
+			padding-bottom: 56.25%;
+		}
+		iframe {
+			position: absolute;
+			height: 100%;
+			top: 0; left: 0;
+		}
+		//width: 66.66666667%;
+	}
+	&-additional {
+		width: 33.33333333%;
+		@include respond-to($tab) {
+			width: 100%;
+		}
+		iframe {
+			height: 50%;
+			&:first-child {
+				top: 0;
+				@include respond-to($tab) {
+					left: 0;
+				}
+			}
+			&:last-child {
+				bottom: 0;
+				@include respond-to($tab) {
+					top: 0;
+					right: 0;
+					left: auto;
+				}
+			}
+			@include respond-to($tab) {
+				height: 100%;
+				width: 50%;
+			}
+		}
+	}
+}
+
+/*********************
+*** Advantages
+**********************/
+
+.advantages {
+	padding: 150px 0 75px;
+	@include respond-to($lg-desk) {
+		padding: 125px 0;
+	}
+	@include respond-to($sm-desk) {
+		padding: 100px 0;
+	}
+	@include respond-to($tab) {
+		padding: 60px 0 0;
+	}
+	.heading-block {
+		margin-bottom: 50px;
+		&--title {
+			span {
+				@include respond-to($lg-mob-port) {
+					display: block;
+				}
+			}
+		}
+		&--desc {
+			@include respond-to($sm-mob) {
+				font-size: 12px;
+			}
+		}
+	}
+}
+
+.adv {
+	float: left;
+	width: 23%;
+	margin-right: 15.5%;
+	margin-bottom: 90px;
+	padding-top: 40px;
+	height: 170px;
+	&:nth-child(3n) {margin-right: 0;}
+	@include respond-to($lg-desk) {
+	   width: 30%;
+	   margin-right: 5%;
+	   margin-bottom: 70px;
+	}
+	@include respond-to($sm-desk) {
+		margin-bottom: 60px;
+	}
+	@include respond-to($tab) {
+		width: 43%;
+		padding-top: 25px;
+		height: auto;
+		&:nth-child(odd) {
+			margin-right: 14%;
+			@include respond-to($lg-mob-port) {
+				margin-right: 0;
+			}
+		}
+		&:nth-child(even) {
+			margin-right: 0;
+		}
+	}
+	@include respond-to($lg-mob-land) {
+		width: 48%;
+		&:nth-child(odd) {
+			margin-right: 4%;
+		}
+	}
+	@include respond-to($lg-mob-port) {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 40px;
+	}
+	.circle {
+		top: 0; left: 0;
+	}
+	//padding: 60px 180px 80px 0;
+}
+
+/*********************
+*** Prices
+**********************/
+
+.prices {
+	padding: 25px 0;
+	background-image: url(img/prices-bg.jpg);
+	@include bg-cover;
+	.container {
+		@include respond-to($sm-mob-land) {
+			padding: 0;
+		}
+		@include respond-to($lg-mob-port) {
+			padding: 0;
+		}
+	}
+	.heading-block {
+		color: $wh;
+		margin-bottom: .5em;
+		&--title {
+			color: $wh;
+			margin-bottom: .2em;
+		}
+		//span {display: block;}
+	}
+	&--subtitle {
+		@include respond-to($sm-desk) {
+			font-size: 36px;
+		}
+		@include respond-to($tab) {
+			font-size: 28px;
+		}
+		@include respond-to($lg-mob) {
+			font-size: 24px;
+		}
+		//font-size: 48px;
+		//font-weight: 700;
+	}
+	&--text {
+		color: $wh;
+		max-width: 650px;
+		text-align: center;
+		margin: 0 auto;
+		font-weight: 300;
+		margin-top: 1.6em;
+		@include respond-to($lg-mob) {
+			padding: 0 25px;
+		}
+	}
+}
+
+.price-package {
+	&-list {
+		margin-top: 30px;
+		font-size: 0;
+		text-align: center;
+		padding: 30px 0 0;
+		// @include respond-to($sm-mob-land) {
+		// 	padding: 30px calc((100% - 350px) / 2) 0;
+		// }
+		@include respond-to($lg-mob-port) {
+			padding: 30px calc((100% - 250px) / 2) 0;
+		}
+		.swiper-wrapper {
+			@media only screen and (min-width: 768px) {
+				justify-content: center;
+			}
+			align-items: center;
+		}
+	}
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 18px;
+	position: relative;
+	@include respond-to($sm-desk) {
+		font-size: 16px;
+	}
+	.btn {
+		position: absolute;
+		bottom: 26px;
+		left: 0;
+		@include respond-to($tab) {
+	        bottom: 14px;
+	        font-size: 16px;
+	    }
+	    @include respond-to($lg-mob-land) {
+	    	font-size: 14px;
+	    }
+	}
+	&-simple {
+		position: relative;
+		width: 385px; 
+		//min-height: 600px;
+		min-height: 560px;
+		padding: 18px 35px;
+		background-color: rgba(255, 255, 255, .9);
+		@include respond-to($lg-desk) {
+			//min-height: 520px;
+			min-height: 480px;
+			width: 340px;
+			padding: 18px 26px;
+		}
+		@include respond-to($sm-desk) {
+			width: 275px;
+			padding: 16px;
+			//min-height: 460px;
+			min-height: 420px;
+		}
+		@include respond-to($tab) {
+	        width: 215px;
+	        min-height: 360px;
+	        padding: 14px 14px 18px;
+	    }
+	    @include respond-to($lg-mob-land) {
+	    	min-height: 300px;
+	    	width: 185px;
+	    }
+	    @include respond-to($sm-mob-land) {
+	    	width: 172.5px;
+	    }
+		.price-package {
+			&--term {
+				font-size: 30px;
+				@include respond-to($sm-desk) {
+					font-size: 22px;
+				}
+			}
+			&--name {
+				font-size: 30px;
+				@include respond-to($lg-desk) {
+					font-size: 26px;
+				}
+				@include respond-to($sm-desk) {
+					font-size: 22px;
+				}
+				@include respond-to($lg-mob) {
+					font-size: 20px;
+				}
+				.name {color: #000;}
+				
+			}
+			&--text {
+				margin-bottom: 1.5em;
+			}
+			&--feature {
+				position: absolute;
+				width: calc(100% - 120px);
+				left: 60px;
+				top: 50%;
+			    transform: translateY(-50%);
+			    text-align: center;
+			    @include respond-to($lg-desk) {
+			    	width: calc(100% - 70px);
+			    	left: 35px;
+			    }
+			    @include respond-to($sm-desk) {
+			    	width: calc(100% - 32px);
+			    	left: 16px;
+			    }
+			    @include respond-to($tab) {
+			        font-size: 14px;
+			    }
+			}
+		}
+		.price {
+			&--amount {
+				display: block;
+				font-size: 100px;
+				margin-top: .6em;
+				@include respond-to($lg-desk) {
+					margin-top: .35em;
+					font-size: 80px;
+				}
+				@include respond-to($sm-desk) {
+					font-size: 60px;
+				}
+			}
+			&--currency {
+				font-size: 60px;
+				line-height: 1em;
+				@include respond-to($lg-desk) {
+					font-size: 52px;
+				}
+				@include respond-to($sm-desk) {
+					font-size: 42px;
+				}
+			}
+		}
+		.btn {
+			position: absolute;
+			width: 260px;
+			left: calc(50% - 130px);
+			@include respond-to($sm-desk) {
+				width: 200px;
+				left: calc(50% - 100px);
+			}
+			@include respond-to($tab) {
+		        width: calc(100% - 28px);
+		        left: 14px;
+		    }
+		    // @include respond-to($lg-mob-land) {
+		    // 	width: calc(100% - 120px);
+		    //     max-width: calc(100% - 120px);
+		    //     left: 60px;
+		    // }
+		}
+	}
+
+
+	&-highlight {
+		width: 480px; 
+		//min-height: 760px;
+		min-height: 720px;
+		background-color: $wh;
+		box-shadow: 0 13px 43px 0 rgba(9, 30, 44, 0.54);
+		margin: 0 45px;
+		padding: 26px 76px;
+		margin-top: -30px;
+		@include respond-to($lg-desk) {
+			margin-left: 24px;
+			margin-right: 24px;
+			padding: 24px 46px;
+			width: 420px;
+			//min-height: 600px;
+			min-height: 580px;
+		}
+		@include respond-to($sm-desk) {
+			width: 325px;
+			padding: 18px 36px;
+			margin-left: 16px;
+			margin-right: 16px;
+			//min-height: 520px;
+			margin-top: -14px;
+			min-height: 480px;
+		}
+		@include respond-to($tab) {
+	        width: 260px;
+	        margin-left: 12px;
+	        margin-right: 12px;
+	        padding: 18px;
+	        min-height: 420px;
+	    }
+	    @include respond-to($lg-mob-land) {
+			width: 240px;
+			min-height: 375px;
+		}
+		@include respond-to($sm-mob-land) {
+			width: 230px;
+		}
+		@include respond-to($lg-mob) {
+			margin: 0;
+	        //display: none;
+	    }
+		.price-package {
+			&--term {
+				font-size: 36px;
+				@include respond-to($sm-desk) {
+					font-size: 26px;
+				}
+			}
+			&--name {
+				font-size: 36px;
+				@include respond-to($lg-desk) {
+					font-size: 32px;
+				}
+				@include respond-to($sm-desk) {
+					font-size: 28px;
+				}
+				@include respond-to($tab) {
+			        font-size: 24px;
+			    }
+			    @include respond-to($lg-mob) {
+			    	font-size: 22px;	
+				}
+				.name {
+					color: #d43c3a;
+				}
+			}
+			&--feature {
+				font-size: 20px;
+				margin-left: 10%;
+				width: 86%;
+				display: block;
+				margin: 65px auto 0;
+				@include respond-to($lg-desk) {
+					font-size: 18px;
+					// margin: 55px auto 0;
+					width: 80%;
+					margin-top: 55px;
+				}
+				@include respond-to($sm-desk) {
+					font-size: 16px;
+					width: 90%;
+				}
+				@include respond-to($tab) {
+			        width: 100%;
+			    }
+			    @include respond-to($lg-mob-land) {
+			    	margin-top: 25px;
+				}
+			}
+		}
+		.price {
+			&--amount {
+				font-size: 120px;
+				margin-top: .75em;
+				@include respond-to($lg-desk) {
+					font-size: 100px;
+					margin-top: .25em;
+				}
+				@include respond-to($sm-desk) {
+					font-size: 80px;
+				}
+				@include respond-to($tab) {
+			        font-size: 64px;
+			    }
+			    @include respond-to($lg-mob) {
+					font-size: 54px;
+				}
+			}
+			&--currency {
+				font-size: 72px;
+				@include respond-to($lg-desk) {
+					font-size: 62px;
+				}
+				@include respond-to($sm-desk) {
+					font-size: 52px;
+				}
+				@include respond-to($tab) {
+			        font-size: 46px;
+			    }
+			    @include respond-to($lg-mob) {
+			    	font-size: 40px;	
+				}
+			}
+		}
+		
+		.btn {
+			//width: 320px;
+			left: calc(50% - 160px);
+			box-shadow: 0px 0px 10px 0px rgba(239, 26, 30, 0.5);
+			@include respond-to($sm-desk) {
+				width: 260px;
+				left: calc(50% - 130px);
+			}
+			@include respond-to($tab) {
+		        width: calc(100% - 36px);
+		        max-width: calc(100% - 36px);
+		        left: 18px;
+		    }
+		    // @include respond-to($lg-mob-land) {
+		    //     width: calc(100% - 100px);
+		    //     max-width: calc(100% - 100px);
+		    //     left: 50px;
+		    // }
+		}
+	}
+
+
+	&--term, &--price, &--name {
+		color: $blue;
+	}
+	&--term {font-weight: 500;}
+	.price {
+		&--amount {
+			display: block;
+			line-height: 1em;
+			font-weight: 700;
+		}
+		&--currency {
+			display: block;
+			line-height: 1em;
+		}
+	}
+	&--name {
+		//margin: 1em 0;
+		font-weight: 500;
+		span {display: block;}
+	}
+	&--feature {
+		font-weight: 300;
+		//text-align: left;
+		//position: absolute;
+	}
+	.btn {
+		bottom: 18px;
+	}
+}
+
+/*********************
+*** Partnership
+**********************/
+
+.partnership {
+	padding: 160px 0;
+	.heading-block--title {
+		margin-bottom: .5em;
+	}
+	@include respond-to($lg-desk) {
+	   padding: 130px 0;
+	}
+	@include respond-to($sm-desk) {
+		padding: 100px 0;
+	}
+}
+
+.film-cards {
+	position: absolute;
+	width: 45%; height: auto;
+	top: -100px; right: 0;
+	img {width: 100%;}
+	@include respond-to($lg-desk) {
+	   top: -40px;
+	}
+}
+
+.text-list {
+	&--item {
+		position: relative;
+		margin: .5em 0;
+		padding-left: 28px;
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 4px; left: 0;
+			width: 12px; height: 12px;
+			background-image: url(img/check-ok.svg);
+			@include bg-contain;
+		}
+	}
+}
+
+/*********************
+*** Feedbacks
+**********************/
+
+.feedbacks {
+	padding: 100px 0 180px;
+	@include respond-to($lg-desk) {
+	   padding-top: 80px;
+	}
+	@include respond-to($sm-desk) {
+		padding-bottom: 120px;
+	}
+	@include respond-to($tab) {
+		padding: 60px 0 80px;
+	}
+	@include respond-to($lg-mob) {
+		padding: 40px 0 60px;
+	}
+
+	.heading-block {
+		margin-bottom: 100px;
+		@include respond-to($sm-desk) {
+			margin-bottom: 60px;
+		}
+		@include respond-to($lg-mob) {
+			margin-bottom: 40px;
+		}
+		&--title {
+			margin-bottom: .5em;
+		}
+	}
+}
+
+.feedback {
+	&--text {
+		margin-bottom: 26px;
+		min-height: 3.5em;
+	}
+	&--photo, &--desc {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	&--desc {
+		@include respond-to($tab) {
+			text-align: left;
+		}
+		@include respond-to($lg-mob) {
+			text-align: center;
+			width: 100%;
+			//font-size: 14px;
+		}
+	}
+	&--photo {
+		width: 100px; height: 100px;
+		margin-right: 38px;
+		border-radius: 50%;
+		border: 5px solid $wh;
+  		box-shadow: 0px 10px 15px 0px rgba(71, 33, 94, 0.05);
+  		@include bg-contain;
+  		@include respond-to($lg-desk) {
+  			margin-right: 26px;
+  		}
+  		@include respond-to($sm-desk) {
+  			margin-right: 16px;
+  		}
+  	}
+  	&--name {
+  		font-size: 24px;
+  		font-weight: 700;
+  		color: $blue;
+  		margin-bottom: .4em;
+  		@include respond-to($tab) {
+			font-size: 20px;
+		}
+		@include respond-to($lg-mob) {
+			font-size: 16px;
+		}
+  	}
+	&--info {
+		@include respond-to($tab) {
+			text-align: center;
+		}
+	}
+}
+
+.feedback-slider {
+	padding: 0 160px 20px;
+	max-width: 1920px;
+	@include respond-to($lg-desk) {
+	   padding: 0 80px 20px;
+	   max-width: 1360px;
+	}
+	@include respond-to($sm-desk) {
+		padding: 0 60px 20px;
+	}
+	@include respond-to($tab) {
+		padding: 0 120px 20px;
+	}
+	@include respond-to($lg-mob-port) {
+		padding: 0 40px 0;
+	}
+	//margin: 0 100px;
+	//max-width: 1600px;
+	.swiper-wrapper {
+		//max-width: 1600px;
+		//padding: 0 150px;
+	}
+	
+		// svg {
+		// 	fill: #000;
+		// }
+}
+
+.slider-btn {
+	z-index: 1;
+	position: absolute;
+	top: calc(50% - 21px);
+	cursor: pointer;
+	width: 20px; height: 42px;
+    top: calc(50% - 21px);
+	svg {
+		width: 100%;
+		height: 100%;
+		fill: #a08ead;
+	}
+	&:hover {
+		svg {
+			fill: #49245f;
+		}
+	}
+	&-prev {
+	    left: 70px;
+	    @include respond-to($lg-desk) {
+	    	left: 30px;
+		}
+		@include respond-to($sm-desk) {
+			left: 20px;
+		}
+		@include respond-to($tab) {
+			left: 50px;
+		}
+		@include respond-to($lg-mob) {
+			left: 12px;
+		}
+
+	}
+	&-next {
+		right: 70px;
+		@include respond-to($lg-desk) {
+	    	right: 30px;
+		}
+		@include respond-to($sm-desk) {
+			right: 15px;
+		}
+		@include respond-to($tab) {
+			right: 50px;
+		}
+		@include respond-to($lg-mob) {
+			right: 12px;
+		}
+	}
+}
+/*********************
+*** Call to Action
+**********************/
+
+.cta {
+	background-image: url(img/cta-bg.jpg);
+	@include bg-cover;
+	//min-height: 700px;
+	padding: 165px 0;
+	color: $wh;
+	@include respond-to($lg-desk) {
+		padding: 80px 0 130px;
+	}
+	@include respond-to($tab) {
+		padding: 70px 0 110px;
+	}
+	@include respond-to($lg-mob) {
+		padding: 50px 0 90px;
+	}
+	&-form {
+		@include respond-to($lg-mob-land) {
+			max-width: 380px;
+			margin: 0 auto;
+		}
+	}
+	.text-logo {
+		margin-bottom: .2em;
+		text-shadow: 0 13px 65px rgba(9, 30, 44, 0.9);
+	}
+	&--text {
+		font-size: 12px;
+		font-weight: 300;
+		//position: absolute;
+		opacity: .6;
+		margin-bottom: 3em;
+		//width: 100%;
+		text-align: center;
+		//bottom: 60px;
+		@include respond-to($lg-mob) {
+			font-size: 10px;
+		}
+	}
+	.heading-block {
+		@include respond-to($sm-desk) {
+  			max-width: 100%;
+  		}
+		&--title {
+			color: $wh;
+			margin-bottom: .6em;
+			@include respond-to($lg-mob) {
+				font-size: 22px;
+			}
+		}
+		&--subtitle {
+			font-size: 1.2em;
+			margin-bottom: 2.5em;
+			@include respond-to($tab) {
+				font-size: 18px;
+			}
+			@include respond-to($lg-mob) {
+				font-size: 14px;
+			}
+		}
+	}
+	.input-field {
+		&:last-of-type {margin-bottom: 0.7em;}
+		@include respond-to($sm-desk) {
+  			max-width: 520px;
+  			margin-left: auto;
+  			margin-right: auto;
+  			
+  			// &--check {
+  			// 	width: 10px; height: 10px;
+  			// 	top: 19px; right: 19px;
+  			// }
+  		}
+	}
+	.btn-submit {
+		box-shadow: 0 13px 65px 0 rgba(35, 71, 95, 0.5);
+		&:hover {
+  			box-shadow: 0 13px 65px 0 rgba(35, 71, 95, 0.7);
+		}
+	}
+}
+
+input:focus {
+	outline: none;
+}
+
+.input-field {
+	position: relative;
+	margin-bottom: 2em;
+	&:last-of-type {margin-bottom: 3em;}
+	&--check {
+		position: absolute;
+		width: 12px; height: 12px;
+		top: 23px; right: 23px;
+		@include bg-contain;
+		&-ok {background-image: url(img/check-ok.svg);}
+		&-error {background-image: url(img/check-error.svg);}
+		@include respond-to($tab) {
+			top: 16px;
+			right: 18px;
+		}
+		@include respond-to($lg-mob) {
+			top: 15px;
+			right: 16px;
+		}
+		@include respond-to($lg-mob) {
+			width: 10px; height: 10px;
+			top: 14px; right: 14px;
+		}
+	}
+	input {
+		display: block;
+		width: 100%;
+		padding: 18px 15px;
+		border: 1px solid #ebeef1;
+		border-radius: 35px;
+		// input {
+  // 				padding: 14px 22px;
+  // 				@include respond-to($tab) {
+		// 			padding: 12px 20px;
+		// 		}
+  // 			}
+
+		@include respond-to($tab) {
+			padding: 12px 18px;
+		}
+		@include respond-to($lg-mob) {
+			padding: 10px 16px;
+		}
+	}
+}
+
+/*********************
+*** Footer
+**********************/
+.footer {
+	position: absolute;
+	bottom: 0; left: 0;
+	width: 100%;
+	padding: 16px 12px;
+	&:after {@include clearfix;}
+	color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(0, 0, 0, .2);
+	font-weight: 300;
+	@include respond-to($lg-desk) {
+		font-size: 14px;
+	}
+	@include respond-to($sm-desk) {
+		font-size: 12px;
+	}
+	@include respond-to($lg-mob) {
+        font-size: 11px;
+    }
+    @include respond-to($lg-mob-port) {
+        text-align: center;
+    }
+}
+
+.foo-info {
+	float: left;
+	font-size: 0;
+	@include respond-to($lg-mob-port) {
+		float: none;
+		text-align: center;
+	}
+	&--item {
+		font-size: $base-font-size;
+		display: inline-block;
+		padding: 0 6px;
+		border-right: 1px solid rgba(255, 255, 255, .5);
+		line-height: 1em;
+		&:first-child {padding-left: 0;}
+		&:last-child {border-right: none; padding-right: 0;}
+		@include respond-to($lg-desk) {
+			font-size: 14px;
+		}
+		@include respond-to($sm-desk) {
+			font-size: 12px;
+		}
+		@include respond-to($lg-mob) {
+			font-size: 11px;
+			box-sizing: border-box;
+			&:nth-child(2) {
+				padding-right: 0;
+				border-right: none;
+			}
+	    }
+	}
+}
+
+.foo-created {
+	float: right;
+	@include respond-to($lg-mob-port) {
+		float: none;
+		//display: block;
+		//text-align: center;
+	}
+}
+
+/*********************
+*** Pop Up
+**********************/
+.pop-up {
+	z-index: 10;
+	display: none;
+	position: relative;
+	box-sizing: border-box;
+	width: 960px;
+	color: $dark-blue;
+	position: fixed;
+	top: calc(50% - 285px);
+	left: calc(50% - 480px);
+	background-color: #fff;
+	text-align: center;
+	padding: 30px 130px 60px;
+	border-radius: 25px;
+	border-radius: 25px;
+	box-shadow: 0px 10px 50px 0px rgba(71, 33, 94, 0.6);
+	@include respond-to($lg-desk) {
+		width: 800px;
+		padding: 30px 80px 50px;
+		left: calc(50% - 400px);
+		.text-logo {
+			font-size: 90px;
+		}
+		&--title {
+			font-size: 36px;
+		}
+	}
+	@include respond-to($sm-desk) {
+		width: 720px;
+		padding: 24px 60px 36px;
+		left: calc(50% - 360px);
+		top: calc(50% - 285px);
+	}
+	@include respond-to($tab) {
+		width: 620px;
+		padding: 20px 50px 26px;
+		left: calc(50% - 310px);
+		top: calc(50% - 235px);
+	}
+	@include respond-to($lg-mob) {
+		padding: 12px 20px 16px;
+		border-radius: 20px;
+		form {
+			max-width: 400px;
+			margin: 0 auto;
+		}
+	}
+	@include respond-to($lg-mob-land) {
+		width: 92%;
+		left: 4%;
+		top: calc(50% - 150px);
+	}
+	@include respond-to($lg-mob-port) {
+		width: 86%;
+		left: 7%;
+		top: calc(50% - 190px);
+	}
+	@include respond-to($sm-mob-land) {
+		width: 94%;
+		left: 2%;
+		top: calc(50% - 120px);
+		padding: 8px 14px 12px;
+		form {
+			max-width: 320px;
+		}
+	}
+
+	&-bounceIn {
+		animation: bounceInDown .7s ease;
+	}
+	&-bounceOut {
+		animation: bounceOutDown .7s ease;
+	}
+	&-overlay {
+		display: none;
+		z-index: 9;
+		position: fixed;
+		top: 0; left: 0;
+		width: 100%; height: 100%;
+		background-color: rgba(0, 0, 0, .8);
+	}
+	.text-logo {
+		font-size: 100px;
+		line-height: 100px;
+		@include respond-to($tab) {
+			font-size: 80px;
+			line-height: 80px;
+		}
+		@include respond-to($lg-mob) {
+	        font-size: 60px;
+	        line-height: 60px;
+	    }
+	    @include respond-to($lg-mob-land) {
+			line-height: 50px;
+		}
+	    @include respond-to($sm-mob) {
+			font-size: 46px;
+			line-height: 46px;
+		}
+	}
+	&--title {
+  		font-size: 38px;
+  		font-weight: bold;
+  		margin-bottom: 12px;
+  		@include respond-to($lg-desk) {
+  			font-size: 34px;
+  			margin-bottom: 10px;
+  		}
+  		@include respond-to($sm-desk) {
+  			font-size: 30px;
+  			margin-bottom: 22px;
+  		}
+		@include respond-to($tab) {
+			font-size: 28px;
+			margin-bottom: 18px;
+		}
+		@include respond-to($lg-mob) {
+			font-size: 20px;
+			margin-bottom: 8px;
+		}
+		@include respond-to($sm-mob) {
+			font-size: 14px;
+			//margin-bottom: 12px;
+		}
+		@include respond-to($sm-mob-land) {
+			font-size: 18px;
+			//margin-bottom: 12px;
+		}
+
+
+	}
+	&--subtitle {
+		margin-bottom: 30px;
+		font-weight: 300;
+		@include respond-to($lg-desk) {
+  			margin-bottom: 18px;
+  		}
+  		@include respond-to($lg-mob) {
+	        font-size: 12px;
+	        margin-bottom: 12px;
+	    }
+	    @include respond-to($sm-mob-land) {
+			font-size: 10px;
+		}
+	 //    @include respond-to($sm-mob) {
+		// 	margin-bottom: 12px;
+		// }
+	}
+	&--close {
+		cursor: pointer;
+		position: absolute;
+		top: -40px; right: -40px;
+		width: 35px; height: 35px;
+		background-image: url(img/close-btn.svg);
+		@include bg-contain;
+
+		@include respond-to($lg-desk) {
+  			width: 30px; height: 30px;
+  			top: -30px; right: -30px;
+  		}
+  		@include respond-to($sm-desk) {
+  			width: 26px; height: 26px;
+  			top: -24px; right: -24px;
+  		}
+  		@include respond-to($lg-mob) {
+	        width: 20px; height: 20px;
+	        top: -18px; right: -18px;
+	    }
+	}
+	.input-field {
+		margin-bottom: 2em;
+		@include respond-to($lg-desk) {
+  			margin-bottom: 2em;
+  		}
+  		@include respond-to($lg-mob) {
+			margin-bottom: 1em;
+		}
+		input {
+			@include respond-to($sm-mob-land) {
+				padding: 8px 12px;
+			}
+		}
+	}
+	.btn {
+		@include respond-to($sm-mob-land) {
+			font-size: 14px;
+			height: 30px;
+			line-height: 30px;
+		}
+	}
+}
+
+.scroll-top {
+	display: none;
+	z-index: 10;
+	position: fixed;
+	bottom: 10px; right: 80px;
+	background-color: rgba(255, 255, 255, .2);
+	padding: 16px;
+	border-radius: 50%;
+	cursor: pointer;
+	@include respond-to($sm-desk) {
+		padding: 14px;
+	}
+	@include respond-to($tab) {
+		display: none;
+	}
+	@include respond-to($lg-desk) {
+		//bottom: 10px; 
+		right: 20px;
+	}
+	// @include respond-to($lg-mob) {
+	// 	padding: 10px;
+	// 	bottom: 15px;
+	// }
+
+	&--btn {
+		border-radius: 50%;
+		box-sizing: content-box;
+		width: 18px; height: 18px;
+		padding: 12px;
+		background-color: #fff;
+		background-image: url(img/scroll-top.svg);
+		@include bg-contain;
+		background-size: 18px 18px;
+  		box-shadow: 0px 0px 15px 0px rgba(35, 71, 95, 1);
+  		@include respond-to($sm-desk) {
+			width: 14px; height: 14px;
+			background-size: 14px 14px;
+		}
+		@include respond-to($lg-mob) {
+			width: 10px; height: 10px;
+			background-size: 10px 10px;
+			padding: 10px;
+		}
+	}
+}
+
+/*********************
+*** Animation
+**********************/
+@keyframes bounceInDown {
+    from, 60%, 75%, 90%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -1000px, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(0, 25px, 0);
+    }
+    75% {
+        transform: translate3d(0, -10px, 0);
+    }
+    90% {
+        transform: translate3d(0, 5px, 0);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@keyframes bounceOutDown {
+    20% {
+        transform: translate3d(0, 10px, 0);
+    }
+    40%, 45% {
+        opacity: 1;
+        transform: translate3d(0, -20px, 0);
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(0, 1000px, 0);
+    }
+}

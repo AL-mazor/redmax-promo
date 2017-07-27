@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <defs>
+      <style>
+          .svg--sm-1, .svg--sm-2 {
+//          fill:#aaa;
+          //filter:url(#f1);
+          }
+        .svg--sm-1 {
+          filter: url(#f2);
+        }
+        .svg--sm-2 {
+         // fill: #cc3;
+          filter: url(#f1);
+        }
+        </style>
+        
+    <filter id="f1" x="-100%" y="-50%" width="200%" height="200%">
+      <feComponentTransfer in=SourceAlpha>
+        <feFuncA type="table" tableValues="1 0" />
+      </feComponentTransfer>
+
+      <feGaussianBlur stdDeviation="1"/>
+      <feOffset dx="-3" dy="2" result="offsetblur"/>
+      <feFlood flood-color="rgb(30, 0, 0)" result="color"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feComposite in2="SourceAlpha" operator="in" 
+  />
+
+      <feMerge>
+        <feMergeNode in="SourceGraphic" />
+        <feMergeNode />
+      </feMerge>
+    </filter>
+      
+       <filter id="f2" x="0%" y="-100%" width="200%" height="200%">
+      <feComponentTransfer in=SourceAlpha>
+        <feFuncA type="table" tableValues="1 0" />
+      </feComponentTransfer>
+
+      <feGaussianBlur stdDeviation="1"/>
+      <feOffset dx="-0.5" dy="-4" result="offsetblur"/>
+      <feFlood flood-color="rgba(30, 0, 0, 1)" result="color"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feComposite in2="SourceAlpha" operator="in" 
+  />
+
+      <feMerge>
+        <feMergeNode in="SourceGraphic" />
+        <feMergeNode />
+      </feMerge>
+    </filter>
+ 
+  </defs>
+       
+    <g>
+ <polygon class="svg--sm-1" fill="white" points="0, 100 0, 95 0, 0 0, 0 30, 95 32, 100 30, 100"/>
+      
+<polygon class="svg--sm-2" fill="white" points="100, 0 35, 100 100, 0 100, 100 30, 100 30, 95"/>
+    </g>
+    
+  </svg>

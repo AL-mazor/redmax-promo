@@ -1,0 +1,24 @@
+@mixin bg-contain {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+@mixin bg-cover {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+@mixin clearfix {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+@mixin gradient {
+	background: -moz-linear-gradient(top, #f5f5f5 0%, #f5f5f5 75%, #f5e9eb 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #f5f5f5 0%,#f5f5f5 75%,#f5e9eb 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #f5f5f5 0%,#f5f5f5 75%,#f5e9eb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#f5e9eb',GradientType=0 ); /* IE6-9 */
+}

@@ -1,0 +1,248 @@
+doctype html
+html
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(name="description", content="Современное IPTV от RedMax - 450 HD каналов и огромная коллекция фильмов. Закажи подключение сейчас и получи бесплатный месяц использования!")
+		meta(name="yandex-verification", content="133bc8fcd136d7e3")
+		link(rel="icon", href="img/favicon.png" type="image/x-icon")
+		link(rel="stylesheet", href="style.css")
+
+		title Современное IPTV в Израиле - цифровое телевидение RedMax
+		//
+			include callback.js
+	body
+		include template/mixins
+		include template/vars
+
+		include google-analytics.js
+		header.header
+			.container
+				a(href="/").img-logo
+				.header--nav
+					nav.primary-nav
+						ul
+							li.primary-nav--item
+								a(href="#about-us") О нас
+							li.primary-nav--item
+								a(href="#advantages") Преимущества
+							li.primary-nav--item
+								a(href="#prices") Тарифы
+							li.primary-nav--item
+								a(href="#feedbacks") Отзывы
+							li.primary-nav--item
+								a(href="#cta") Контакты
+					span.btn.btn-sm.btn-blue.btn-pop-up Смотреть RedMax.TV
+					span.burger
+						i
+						i
+						i
+		main
+			#page-overlay.page-overlay
+				.container
+					.page-overlay--inner
+						h1.text-logo
+							span.highlight red
+							span max
+						.page-overlay--subtitle 
+							|Лучшее русское IPTV Израиля. 
+							br 
+							|Новое лицо, неизменно высокое качество.
+						.btn.btn-lg.btn-red.btn-pop-up Заказать подключение
+				.tv-tuner
+				.gradient
+				include img/page-overlay-cut-3.svg
+			.offers
+				.container
+					.row
+						+offer('Более 10000 фильмов', 'Видеотека на любой вкус. Архив популярных программ за 2 недели.')
+						+offer('качественный сигнал', 'Яркая насыщенная цветами картинка, многоканальный звук, отсутствие шумов и помех.')
+					.row
+						+offer('ЛЕГКОСТЬ ПОДКЛЮЧЕНИЯ', 'Возможность смотреть любимые телепередачи везде, где есть интернет: дома, в офисе, в загородном коттедже.')
+						+offer('ОПТИМАЛЬНЫЕ ПАКЕТЫ' , 'Подборка лучших русских и мировых телеканалов по самым выгодным ценам.')
+			section#videos.row
+				.video-block.video-block-main
+					iframe(src="https://www.youtube.com/embed/CD4V9uoY2I4?rel=0?ecver=1", frameborder="0", allowfullscreen)
+				.video-block.video-block-additional
+					iframe(src="https://www.youtube.com/embed/Itv-gSCv3p4?rel=0?ecver=1", frameborder="0", allowfullscreen)
+					iframe(src="https://www.youtube.com/embed/l7GlExx5-Bk?rel=0?ecver=1", frameborder="0", allowfullscreen)
+
+
+			section#advantages.advantages
+				.container
+					.heading-block.heading-block-sm.heading-block-center
+						h2.heading-block--title.advantages--title
+							|Преимущества 
+							span.highlight «RedMax TV»
+						p.heading-block--desc Наша аудитория от Эйлата до Кирьят-Шмона
+					.row
+						// Adv 1
+						.adv.info-block
+							.circle
+							h3.adv--title.info-block--title 
+								span.highlight ЛУЧШЕЕ 
+								|ТЕЛЕВИДЕНИЕ НА РУССКОМ ЯЗЫКЕ
+							p.adv--desc.info-block--desc Самые популярные русскоязычные каналы в высоком разрешении на RedMax.TV
+						// Adv 2
+						.adv.info-block
+							.circle
+							h3.adv--title.info-block--title 
+								span.highlight ОГРОМНЫЙ 
+								|ВЫБОР ТЕЛЕКАНАЛОВ
+							p.adv--desc.info-block--desc С RedMax.TV более 450 популярных телеканалов на любой вкус 
+						// Adv 3
+						.adv.info-block
+							.circle
+							h3.adv--title.info-block--title 
+								|АРХИВ ПРОГРАММ ЗА 
+								span.highlight 14 ДНЕЙ
+							p.adv--desc.info-block--desc Смотри любимые шоу в течение 2-х недель после их показа на RedMax.TV
+						//.row
+						// Adv 4
+						.adv.info-block
+							.circle
+							h3.adv--title.info-block--title 
+								|САМОЕ 
+								span.highlight СОВРЕМЕННОЕ 
+								|ОБОРУДОВАНИЕ
+							p.adv--desc.info-block--desc Мощная приставка нового поколения со скоростным браузером и популярными играми от RedMax.TV
+						// Adv 5
+						.adv.info-block
+							.circle
+							h3.adv--title.info-block--title 
+								span.highlight СКОРОСТЬ 
+								|ПОДКЛЮЧЕНИЯ
+							p.adv--desc.info-block--desc 2 дня – максимальный срок подключения к RedMax.TV. Сегодня заказал – завтра смотришь.
+
+						// Adv 6
+						.adv.info-block
+							.circle
+							h3.adv--title.info-block--title 
+								span.highlight Презентация 
+								br
+								|RedMax TV
+							p.adv--desc.info-block--desc Оцени качество RedMax.TV ещё до оплаты. Мы произведём презентацию на дому или в офисе
+			section#prices.prices
+				.container
+					h2.heading-block.heading-block-sm.heading-block-center
+						span.heading-block--title.prices--subtitle Акции и тарифы
+						span.text-logo 
+							|Red
+							span.highlight max
+					.price-package-list.swiper-container
+						.swiper-wrapper
+							+price-simple('Стример IP TV', 'RedMax', ['более 100000 клиентов по всему миру', 'универсальное IPTV устройство', '4К разрешение + 3D картинка', 'компактный размер'])
+							+price-highlight('ТАРИФ', 'ОПТИМАЛЬНЫЙ', '65', ['техническая поддержка 24/7', '250+ каналов', 'видеотека 10000 каналов', 'более 10 языков для просмотра каналов'])
+							+price-simple('Рассрочка', 'RedMax', ['без переплат', 'удобная система оплаты', 'на 12 месяцев и на 18 месяцев', 'удобный график подключения'])
+					p.prices--text Мы предоставляем качественное обслуживание своим клиентам от Эйлата и до cевера страны.
+			//- 
+				// Partnership
+				section.partnership
+					.container
+						.col-4-10
+							h2.block--title.heading-block--title
+								|Выбор  
+								span.highlight «RedMax TV» 
+								|–
+							p.block--text это своевременный заказ подключения и быстрая установка оборудования, выгодные цены, постоянные акции, скидки, реклама в Израиле, партнерская программа, высокое качество и стабильная техническая поддержка.	
+								ul.text-list
+									li.text-list--item Отличное HD качество картинки и звука. 
+									li.text-list--item Запись онлайн трансляций программ.
+									li.text-list--item Остановка трансляции на время.
+									li.text-list--item Интерактивность. 
+									li.text-list--item Нет необходимости в ТВ-тюнере. 
+							.btn-row
+								.btn.btn-lg.btn-red.btn-pop-up.btn-pop-up Смотреть RedMax.TV
+								.simple-btn.btn-pop-up-welcome Пригласить друга
+						.film-cards
+							img(src="img/film-cards.png", alt="")
+			
+			// About Us
+			section#about-us.about-us
+				.container
+					.about-us--block.col-4-10
+						h2.about-us--title 
+							span.highlight RedMax.TV
+							|–
+							br
+							| современное цифровое телевиденье. № 1 в Израиле.
+						p.about-us--text Высокое качество изображения и многоканальный цифровой звук. Популярные российские, израильские и международные телеканалы. Недорогие услуги скоростного интернета (совместно с компанией «InterHost»). Полное лицензирование медийной деятельности.
+						ul.stats
+							li.stats--item
+								span.stats--num 2014
+								span.stats--text предоставляем услуги IP-телевиденья.
+							li.stats--item
+								span.stats--num 10000
+								span.stats--text постоянных пользователей
+							li.stats--item
+								span.stats--num 450
+								span.stats--text популярных телеканалов
+						.btn-row
+							.btn.btn-lg.btn-red.btn-pop-up Смотреть RedMax.TV
+							.simple-btn.btn-pop-up-welcome Пригласить друга
+					.about-us--tv
+						img(src="img/devices-tv.png", alt="")
+					.about-us--phone
+						img(src="img/devices-phone.png", alt="")
+
+			// Feedbacks
+			section#feedbacks.feedbacks
+				.container
+					.heading-block.heading-block-lg.heading-block-center
+						h2.heading-block--title
+							|Отзывы клиентов 
+							span.highlight «RedMax TV»
+						p.heading-block--subtitle Телевиденье высокого качества от Эйлата до Кирьят-Шмона.
+				.swiper-container.feedback-slider
+					.swiper-wrapper
+						+feedback('Библиотека фильмов раздела кино разделена по жанрам. Очень удобно. Фильмы и сериалы постоянно добавляют.', 'feedback-img-1.jpeg', 'Евгений Кац', 'Архитектор', '(г. Бэер-Шева)')
+						+feedback('С RedMax 2 года. Все основное работает. Качество отличное – хватает на 47 дюймов и HD без тормозов.', 'feedback-img-2.jpeg', 'Марк Аборов', 'Спотривный тренер', '(г. Нетания)')
+						+feedback('Картинка не сыпется. Буферизацию не чувствую. В целом, полёт нормальный.', 'feedback-img-3.jpeg', 'Антон Шаган', 'Финансист', '(г. Тель-Авив)')
+						+feedback('Есть всё, что я люблю: футбол, документалистика, мультики внуку. В библиотеке хороша подборка исторических фильмов.', 'feedback-img-4.jpeg', 'Марк Томпсон', 'Маркетолог', '(г. Тель-Авив)')
+					.slider-btn.slider-btn-prev
+						include img/slider-btn-prev.svg
+					.slider-btn.slider-btn-next
+						include img/slider-btn-next.svg
+			section#cta.cta
+				.container
+					.heading-block.heading-block-sm.heading-block-center
+						span.text-logo
+							|Red
+							span.highlight max
+						span.heading-block--title.cta--title Смотри бесплатно любимые шоу и сериалы.
+						span.heading-block--subtitle.cta--subtitle До конца года - месяц цифрового телевиденья в подарок*
+						form.cta-form(method="post", action="send.php")
+							.input-field
+								input(name="name", type="text", placeholder="Введи свое имя")
+								//
+									span.input-field--check
+							.input-field.input-field-validation
+								input(name="email" type="email", placeholder="Введи свой e-mail адрес")
+								span.input-field--check
+							p.heading-block--text.cta--text *Акция действует при условиях подключения не менее, чем на 12 месяцев.
+							input(type="submit", value="Заказать подключение").btn.btn-submit.btn-red.btn-sm
+			.pop-up-overlay
+			include template/pop-up
+			include template/pop-up-welcome
+
+			.scroll-top
+				.scroll-top--btn
+		footer.footer
+			ul.foo-info
+				li.foo-info--item &copy 2008-2017 RedMax.TV
+				li.foo-info--item Все права защищены
+				li.foo-info--item Русское телевидение в Израиле
+			span.foo-created Created by RedMax
+		include callback.js
+		include yandex-metrika.js
+		include adwords-events-tracking.js
+		script(type="text/javascript", src="js/jquery.min.js")
+		script(type="text/javascript", src="js/swiper.jquery.min.js")
+		script(type="text/javascript", src="js/jquery.validate.min.js")
+		script(type="text/javascript", src="js/main.js")
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+.pop-up.pop-up-main
+	.pop-up--inner
+		span.text-logo 
+			|red
+			span.highlight max
+		p.pop-up--title Запишись сегодня и получи видеотеку из 10 000 фильмов в подарок
+		p.pop-up--subtitle Мы предоставляем качественное обслуживание своим клиентам от Эйлата и до cевера страны.
+		form.pop-up--form(action="send.php", method="POST")
+			.input-field
+				input(name="name", type="text", placeholder="Введи свое имя")
+				//
+					span.input-field--check
+			.input-field.input-field-validation
+				input(name="email", type="email", placeholder="Введи свой e-mail адрес")
+				span.input-field--check
+			button(type="submit").btn.btn-sm.btn-red.btn-submit Заказать подключение
+	.pop-up--close

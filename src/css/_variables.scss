@@ -1,0 +1,69 @@
+// Colors
+$red: #ef1a1e;
+$dark-red: #d21518;
+$blue: #23475f;
+$dark-blue: #1c384a;
+$wh: #fff;
+$bl: #000;
+
+// Media
+$lg-desk: '(max-width: 1630px)';
+$sm-desk: '(max-width: 1199px)';
+$tab: '(max-width: 991px)';
+$lg-mob: '(max-width: 767px)';
+$lg-mob-port: $lg-mob + ' and (orientation: portrait)';
+$lg-mob-land: $lg-mob + ' and (orientation: landscape)';
+$sm-mob: '(max-width: 369px)';
+$sm-mob-land: '(max-width: 600px) and (orientation: landscape)';
+//$mob-land: ;
+@mixin respond-to($media) {
+	@media only screen and #{$media} {
+		@content;
+	}
+}
+// Grid
+.row {
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+[class*=col-] {
+	float: left;
+}
+
+$col-width: 160px;
+.col-3-10 {
+	width: 3 * $col-width;
+	@include respond-to($lg-desk) {
+		width: 400px;
+	}
+	@include respond-to($sm-desk) {
+		width: 340px;
+	}
+	@include respond-to($lg-mob-land) {
+		width: 48%;	
+	}
+	@include respond-to($lg-mob-port) {
+		width: 100%;	
+	}
+}
+.col-4-10 {
+	width: 4 * $col-width;
+	@include respond-to($lg-desk) {
+		width: 560px;
+	}
+	@include respond-to($sm-desk) {
+		width: 520px;
+	}
+	@include respond-to($tab) {
+		width: 80%;
+		float: none;
+		margin: 0 auto;
+	}
+	@include respond-to($lg-mob) {
+		width: 100%;
+	}
+}

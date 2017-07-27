@@ -1,0 +1,447 @@
+.zcwPopup-bg {
+    // display: none;
+    // position: fixed !important;
+    // left: 0 !important;
+    // top: 0 !important;
+    // z-index: 99991 !important;
+    // width: 100% !important;
+    // height: 100% !important;
+    // background: url(images/underlay.png) repeat 0 0 !important;
+    // cursor: pointer !important;
+    // -webkit-filter: blur(1.4px);
+    // -moz-filter: blur(1.4px);
+    // -ms-filter: blur(1.4px);
+    // filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='blur'><feGaussianBlur stdDeviation='2'/></filter></svg>#blur");
+    // filter: blur(2px);
+    // filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=2);
+    @extend .pop-up-overlay;
+}
+
+.zcwPopup {
+    z-index: 99992 !important;
+    display: none;
+    padding: 40px 120px 60px;
+    position: relative;
+    box-sizing: border-box;
+    width: 960px;
+    color: $dark-blue;
+    position: fixed;
+    top: 50%;
+    margin-top: -160px;
+    left: 50%;
+    margin-left: -480px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 25px;
+    border-radius: 25px;
+    box-shadow: 0px 10px 50px 0px rgba(71, 33, 94, 0.6);
+    @include respond-to($sm-desk) {
+        width: 720px;
+        padding: 16px 40px 24px;
+        margin-top: -140px;
+        margin-left: -360px;
+    }
+    @include respond-to($tab) {
+        width: 620px;
+        padding: 22px 60px 26px;
+        margin-left: -310px;
+    }
+    @include respond-to($lg-mob) {
+        width: 86%;
+        margin-left: 0;
+        left: 7%;
+        padding: 14px 26px 22px;
+        //margin-top: -140px;
+        margin-top: 0;
+        top: calc(50% - 220px);
+        //margin-left: -360px;
+    }
+    @include respond-to($lg-mob-land) {
+        top: 30px;
+        width: 94%;
+        left: 2%;
+    }
+    &-form {
+        @include respond-to($tab) {
+            padding: 0 80px;
+        }
+        @include respond-to($lg-mob) {
+            padding: 0;
+        }
+        // @include respond-to($lg-mob-port) {
+        //     padding: 0 10%;
+        // }
+    }
+}
+
+.zcwPopup-title,
+.zcwPopup-description,
+.zcwPopup-content {
+    //color: #495762;
+}
+
+.zcwPopup-description {
+    margin-bottom: 20px;
+    @include respond-to($sm-mob-land) {
+        margin-bottom: 10px;
+    }
+}
+
+.zcwPopup-title {
+    //text-align: center;
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 26px;
+    @include respond-to($lg-desk) {
+        font-size: 32px;
+        margin-bottom: 22px;
+    }
+    @include respond-to($sm-desk) {
+        font-size: 26px;
+        margin-bottom: 18px;
+    }
+    @include respond-to($sm-mob-land) {
+        margin-bottom: 8px;
+    }
+
+}
+
+#zcwPopup-raty img {
+    display: inline !important;
+}
+
+.zcwPopup-close {
+    z-index: 99992 !important;
+    cursor: pointer !important;
+    // text-decoration: none;
+    // color: grey;
+    // position: absolute;
+    // top: 10px;
+    // right: 10px;
+    @extend .pop-up--close;
+    color: transparent;
+}
+
+.zcwPopup-content {
+    //@extend .pop-up--inner;
+    //font-size: 14px;
+}
+
+.zcwPopup-countdown {
+    background: url(img/stopwatch.svg) no-repeat 0 0;
+    padding-left: 50px;
+    float: right;
+    font-size: 28px;
+    line-height: 36px !important;
+    font-weight: 300 !important;
+    @include respond-to($tab) {
+        float: none;
+        display: inline-block;
+        margin-top: 20px;
+    }
+    //margin-top: 14px;
+}
+
+.zcwPopup .link {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.zcwPopup .powered_by {
+    margin-top: 7px;
+    font-size: 12px;
+    color: #777777 !important;
+}
+
+.zcwPopup .powered_by a {
+    font-weight: bold !important;
+    color: #777777 !important;
+    text-decoration: underline !important;
+}
+
+.zcwPopup button,
+.zcwPopup input,
+.zcwPopup select,
+.zcwPopup textarea {
+    margin: 0;
+    //width: auto !important;
+    color: black;
+    border: solid 1px #999999;
+    border-radius: 2px;
+    //display: inline !important;
+
+
+    // background-color: #fff !important;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    // border: 1px solid #c5c5c5 !important;
+    // -moz-border-radius: 5px !important;
+    // -webkit-border-radius: 5px !important;
+    // border-radius: 5px !important;
+    
+    // color: #333 !important;
+    // font-size: 18px !important;
+    // font-weight: 300;
+    // outline: medium none;
+    // margin: 0 5px 0 0 !important;
+    // transition: border 0.25s ease-out 0s;
+    // min-width: 150px !important;
+    // max-width: 200px !important;
+    // width: 100%;
+    // -moz-box-shadow: inset -1px 1px 1px rgba(0,0,0,.19) !important;
+    // -webkit-box-shadow: inset -1px 1px 1px rgba(0,0,0,.19) !important;
+    // box-shadow: inset -1px 1px 1px rgba(0,0,0,.19) !important;
+    // line-height: 18px !important;
+   
+}
+
+.zcwPopup input.zcwInputError,
+.zcwPopup select.zcwInputError,
+.zcwPopup textarea.zcwInputError {
+    border: 1px solid red;
+}
+
+#zcwMiniButton {
+    position:fixed;
+    right: 88.5px;
+    bottom: 100px;    
+    width: 60px;
+    height: 60px;
+    cursor:pointer;
+    opacity:0.5;
+    z-index:99990;
+    transition: .2s;
+    @include respond-to($lg-desk) {
+        //bottom: 140px;
+        right: 28px;
+    }
+    @include respond-to($sm-desk) {
+        width: 50px;
+        height: 50px;
+    }
+    @include respond-to($tab) {
+        bottom: 60px;
+    }
+    @include respond-to($lg-mob) {
+        width: 44px;
+        height: 44px;
+        bottom: 25px;
+        right: 25px;
+    }
+}
+
+#zcwMiniButton #zcwMiniButtonMain {
+    border-radius:50% !important;
+    background-clip:padding-box;
+    background-color: $red;
+    width:60px;
+    height:60px;
+    animation:zcwmini 1.5s 0s ease-out infinite;
+    @include respond-to($sm-desk) {
+        width: 50px;
+        height: 50px;
+    }
+    @include respond-to($lg-mob) {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+#zcwMiniButton #zcwMiniButtonMain:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background-image:url(img/callback-phone.svg);
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size: 50%;
+    -webkit-animation: zcwphone 1.5s linear infinite;
+    -moz-animation: zcwphone 1.5s linear infinite;
+    animation: zcwphone 1.5s linear infinite;
+}
+
+#zcwMiniButton:hover {
+    opacity:0.8;
+}
+
+#zcwMiniButton:hover #zcwMiniButtonMain {
+    -webkit-animation:zcwmini2 1s 0.4s ease-out infinite;
+    -moz-animation: zcwmini2 1s 0.4s ease-out infinite;
+    animation: zcwmini2 1s 0.4s ease-out infinite;
+}
+
+#zcwMiniButton:hover #zcwMiniButtonMain:before {
+    -webkit-animation: zcwphone2 1s linear infinite;
+    -moz-animation: zcwphone2 1s linear infinite;
+    animation: zcwphone2 1s linear infinite;
+}
+
+@keyframes zcwphone {
+    0% {
+        transform:rotate(10deg);
+    }
+    25% {
+        transform:rotate(20deg);
+    }
+    50% {
+        transform:rotate(10deg);
+    }
+    75% {
+        transform:rotate(-20deg);
+    }
+    100% {
+        transform:rotate(10deg);
+    }
+}
+
+@keyframes zcwphone2 {
+    0% {-ms-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+    25% {-ms-transform:rotate(30deg);-webkit-transform:rotate(30deg);transform:rotate(30deg);}
+    50% {-ms-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+    75% {-ms-transform:rotate(-30deg);-webkit-transform:rotate(-30deg);transform:rotate(-30deg);}
+    100% {-ms-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+}
+
+@keyframes zcwmini {
+    0% {
+        box-shadow: 0 0 8px 6px rgba(255,0,34, 0), 0 0 0 0 rgba(0,0,0,0), 0 0 0 0 rgba(255,0,34, 0);
+    }
+    10% {
+        box-shadow: 0 0 8px 6px rgba(0,0,0, 1), 0 0 12px 10px rgba(0,0,0,0), 0 0 0 0 rgba(0,0,0, 1);
+    }
+    100% {
+        box-shadow: 0 0 8px 6px rgba(255,0,34, 0), 0 0 0 40px rgba(0,0,0,0), 0 0 0 40px rgba(255,0,34, 0);
+    }
+}
+@-webkit-keyframes zcwmini2 {
+    0% {box-shadow: 0 0 8px 6px rgba(255,0,34, 0), 0 0 0 0 rgba(0,0,0,0), 0 0 0 0 rgba(255,0,34, 0);}
+    10% {box-shadow: 0 0 8px 6px rgba(0,0,0, 1), 0 0 12px 10px rgba(0,0,0,0), 0 0 0 0 rgba(0,0,0, 1);}
+    100% {box-shadow: 0 0 8px 6px rgba(255,0,34, 0), 0 0 0 40px rgba(0,0,0,0), 0 0 0 40px rgba(255,0,34, 0);}
+}
+@-moz-keyframes zcwmini2 {
+    0% {box-shadow: 0 0 8px 6px rgba(255,0,34, 0), 0 0 0 0 rgba(0,0,0,0), 0 0 0 0 rgba(255,0,34, 0);}
+    10% {box-shadow: 0 0 8px 6px rgba(0,0,0, 1), 0 0 12px 10px rgba(0,0,0,0), 0 0 0 0 rgba(0,0,0, 1);}
+    100% {box-shadow: 0 0 8px 6px rgba(255,0,34, 0), 0 0 0 40px rgba(0,0,0,0), 0 0 0 40px rgba(255,0,34, 0);}
+}
+@keyframes zcwmini2 {
+    0% {box-shadow: 0 0 8px 6px rgba(255,0,34, 0), 0 0 0 0 rgba(0,0,0,0), 0 0 0 0 rgba(255,0,34, 0);}
+    10% {box-shadow: 0 0 8px 6px rgba(0,0,0, 1), 0 0 12px 10px rgba(0,0,0,0), 0 0 0 0 rgba(0,0,0, 1);}
+    100% {box-shadow: 0 0 8px 6px rgba(255,0,34, 0), 0 0 0 40px rgba(0,0,0,0), 0 0 0 40px rgba(255,0,34, 0);}
+}
+
+div.zcwPopup input[type="submit"]:hover {
+    //background: #65a9c9;
+    //border-left: 1px solid #4f859e;
+    //border-bottom: 1px solid #4f859e;
+    background-color: #d21518;
+    box-shadow: 0px 0px 15px 0px rgba(239, 26, 30, 0.9);
+}
+
+div.zcwPopup input[type="submit"] {
+    display: inline-block;
+    background-color: $red;
+    font-size: 20px;
+    line-height: 40px;
+    height: 40px;
+    border-radius: 25px;
+    width: 240px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    transition: .2s;
+    border: none;
+    @include respond-to($tab) {
+        margin-top: 12px;
+    }
+    @include respond-to($lg-mob) {
+        font-size: 18px;
+        line-height: 36px;
+        height: 36px;
+    }
+    @include respond-to($lg-mob-port) {
+       width: 100%;
+       max-width: 240px;
+       margin-top: 12px;
+    }
+     @include respond-to($lg-mob-land) {
+       //width: 100%;
+       max-width: 200px;
+    }
+
+    // border-radius: 5px;
+    // background: #1f77a0 !important;
+    // color: #fff !important;
+    // padding: 8px 13px 9px !important;
+    // border: none;
+    // border-left: 1px solid #185d7d;
+    // border-bottom: 1px solid #185d7d;
+    // font-size: 18px;
+    // line-height: 18px !important;
+    // margin: 0 10px 0 0;
+    // position: static !important;
+    // box-shadow: none !important;
+
+}
+
+div.zcwPopup input[type="button"] {
+    //padding: 10px !important;
+    padding: 0 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    @include respond-to($lg-mob) {
+        font-size: 18px;
+        height: 36px;
+        line-height: 36px;
+        min-width: 200px;
+    }
+    &:first-child {
+        background-color: #23475f;
+        @include respond-to($lg-mob) {
+            margin-bottom: 12px;
+        }
+    }
+    &:last-child {
+        background-color: #ef1a1e;
+    }
+}
+
+body > div.zcwPopup > div.zcwPopup-content > div > form > input[type="text"]:nth-child(3)
+{
+    background-image: url(img/callback-phone-input.svg);
+    background-size: 15px;
+    background-position: 12px 50%;
+    //background-image: url(https://uptocall.com/widget/images/phone.png) !important;
+    padding: 9px 2px 9px 35px !important;
+    border: solid 1px #ebeef1;
+    border-radius: 35px;
+    margin-right: 12px;
+    @include respond-to($tab) {
+        width: 80%;
+        margin-bottom: 16px;
+    }
+    @include respond-to($lg-mob-port) {
+        width: 75%;
+        margin-right: 5%;
+        margin-bottom: 14px;
+        //margin-right: calc(100% - 240px);
+    }
+    @include respond-to($lg-mob-land) {
+        width: 45%;
+        margin-right: 3%;
+        margin-bottom: 0;
+        //margin-right: calc(100% - 240px);
+    }
+}
+
+.powered_by {
+    display: none;
+}
