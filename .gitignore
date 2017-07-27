@@ -1,2 +1,6 @@
 node_modules
+<<<<<<< HEAD
 bower_components
+=======
+bower_components
+>>>>>>> c65544c15d46b2698ac68a4b20977d9f71de6fdb
