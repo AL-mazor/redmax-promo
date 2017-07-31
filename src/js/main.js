@@ -96,7 +96,7 @@ $(function() {
 	function showPopUp(popUp) {
 		hideScrollBtn();
 		$popUpOverlay.fadeIn('200');
-		$.merge(popUp, $popUpOverlay).on('mousewheel', function() {return false;})
+		$($popUpOverlay).on('сlick', function() {return false;})
 		popUp.addClass('pop-up-bounceIn').show();
 		popUp.one(animationEvent, function () {
 			popUp.removeClass('pop-up-bounceIn');
@@ -134,3 +134,30 @@ $(function() {
 	}
 
 });
+
+if (window.innerWidth >= 991) {
+	$(function () {
+	new WOW({
+	  offset:       200,          
+	  mobile:       true      
+	}).init();
+	});
+};
+
+"use strict";
+$(function() {
+    $(".youtube").each(function() {
+        $(this).css('background-image', 'url(http://i.ytimg.com/vi/' + this.id + '/sddefault.jpg)');
+
+        $(this).append($('<div/>', {'class': 'play'}));
+
+        $(document).delegate('#'+this.id, 'click', function() {
+            var iframe_url = "https://www.youtube.com/embed/" + this.id + "?autoplay=1&autohide=1";
+            if ($(this).data('params')) iframe_url+='&'+$(this).data('params');
+
+            var iframe = $('<iframe/>', {'frameborder': '0', 'src': iframe_url, 'width': $(this).width(), 'height': $(this).height() })
+
+            $(this).replaceWith(iframe);
+        });
+    });
+ });

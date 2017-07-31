@@ -6,7 +6,8 @@ html
 		meta(name="description", content="Современное IPTV от RedMax - 450 HD каналов и огромная коллекция фильмов. Закажи подключение сейчас и получи бесплатный месяц использования!")
 		meta(name="yandex-verification", content="133bc8fcd136d7e3")
 		link(rel="icon", href="img/favicon.png" type="image/x-icon")
-		link(rel="stylesheet", href="style.css")
+		link(rel="stylesheet", href="style.css?v=1.02")
+		link(rel="stylesheet", href="animate.css")
 
 		title Современное IPTV в Израиле - цифровое телевидение RedMax
 		//
@@ -23,11 +24,11 @@ html
 					nav.primary-nav
 						ul
 							li.primary-nav--item
-								a(href="#about-us") О нас
-							li.primary-nav--item
-								a(href="#advantages") Преимущества 1
+								a(href="#advantages") Преимущества
 							li.primary-nav--item
 								a(href="#prices") Тарифы
+							li.primary-nav--item
+								a(href="#about-us") О нас
 							li.primary-nav--item
 								a(href="#feedbacks") Отзывы
 							li.primary-nav--item
@@ -38,60 +39,65 @@ html
 						i
 						i
 		main
+			#parallax-viewport.parallax-viewport.wow.fadeIn(data-wow-delay="0.6s")
 			#page-overlay.page-overlay
+				span.page-overlay-bg
 				.container
 					.page-overlay--inner
-						h1.text-logo
+						h1.text-logo.wow.fadeIn
 							span.highlight red
 							span max
-						.page-overlay--subtitle 
-							|Лучшее русское IPTV Израиля. 
+						.page-overlay--subtitle.wow.fadeInUp
+							|Лучшее IPTV Израиля на русском языке.
 							br 
-							|Новое лицо, неизменно высокое качество.
-						.btn.btn-lg.btn-red.btn-pop-up Заказать подключение
-				.tv-tuner
+							|Лидеры в своей сфере - на новом уровне!
+						.btn.btn-lg.btn-red.btn-pop-up.wow.fadeIn(data-wow-delay="0.4s") Заказать подключение
+				.tv-tuner.wow.fadeInUp(data-wow-delay="0.4s")
 				.gradient
 				include img/page-overlay-cut-3.svg
 			.offers
 				.container
 					.row
-						+offer('Более 10000 фильмов', 'Видеотека на любой вкус. Архив популярных программ за 2 недели.')
-						+offer('качественный сигнал', 'Яркая насыщенная цветами картинка, многоканальный звук, отсутствие шумов и помех.')
+						+offer1('Более 10000 фильмов', 'Видеотека на любой вкус. Архив популярных программ за 2 недели.')
+						+offer2('качественный сигнал', 'Яркая насыщенная цветами картинка, многоканальный звук, отсутствие шумов и помех.')
 					.row
-						+offer('ЛЕГКОСТЬ ПОДКЛЮЧЕНИЯ', 'Возможность смотреть любимые телепередачи везде, где есть интернет: дома, в офисе, в загородном коттедже.')
-						+offer('ОПТИМАЛЬНЫЕ ПАКЕТЫ' , 'Подборка лучших русских и мировых телеканалов по самым выгодным ценам.')
+						+offer1('ЛЕГКОСТЬ ПОДКЛЮЧЕНИЯ', 'Возможность смотреть любимые телепередачи везде, где есть интернет: дома, в офисе, в загородном коттедже.')
+						+offer2('ОПТИМАЛЬНЫЕ ПАКЕТЫ' , 'Подборка лучших русских и мировых телеканалов по самым выгодным ценам.')
 			section#videos.row
 				.video-block.video-block-main
-					iframe(src="https://www.youtube.com/embed/CD4V9uoY2I4?rel=0?ecver=1", frameborder="0", allowfullscreen)
+					.youtube#CD4V9uoY2I4.wow.fadeIn
+					//iframe(src="https://www.youtube.com/embed/CD4V9uoY2I4?rel=0?ecver=1", frameborder="0", allowfullscreen).wow.fadeIn
 				.video-block.video-block-additional
-					iframe(src="https://www.youtube.com/embed/Itv-gSCv3p4?rel=0?ecver=1", frameborder="0", allowfullscreen)
-					iframe(src="https://www.youtube.com/embed/l7GlExx5-Bk?rel=0?ecver=1", frameborder="0", allowfullscreen)
+					.video-block-additional-two
+						.youtube#Itv-gSCv3p4.wow.fadeIn(data-wow-delay="0.2s")
+					.video-block-additional-two
+						.youtube#l7GlExx5-Bk.wow.fadeIn
 
 
 			section#advantages.advantages
 				.container
 					.heading-block.heading-block-sm.heading-block-center
-						h2.heading-block--title.advantages--title
+						h2.heading-block--title.advantages--title.wow.fadeIn
 							|Преимущества 
 							span.highlight «RedMax TV»
-						p.heading-block--desc Наша аудитория от Эйлата до Кирьят-Шмона
+						p.heading-block--desc.wow.fadeIn Наша аудитория от Эйлата до Кирьят-Шмона
 					.row
 						// Adv 1
-						.adv.info-block
+						.adv.info-block.wow.fadeInUp
 							.circle
 							h3.adv--title.info-block--title 
 								span.highlight ЛУЧШЕЕ 
 								|ТЕЛЕВИДЕНИЕ НА РУССКОМ ЯЗЫКЕ
 							p.adv--desc.info-block--desc Самые популярные русскоязычные каналы в высоком разрешении на RedMax.TV
 						// Adv 2
-						.adv.info-block
+						.adv.info-block.wow.fadeInUp(data-wow-delay="0.1s")
 							.circle
 							h3.adv--title.info-block--title 
 								span.highlight ОГРОМНЫЙ 
 								|ВЫБОР ТЕЛЕКАНАЛОВ
-							p.adv--desc.info-block--desc С RedMax.TV более 450 популярных телеканалов на любой вкус 
+							p.adv--desc.info-block--desc С RedMax.TV более 200 популярных телеканалов на любой вкус 
 						// Adv 3
-						.adv.info-block
+						.adv.info-block.wow.fadeInUp(data-wow-delay="0.2s")
 							.circle
 							h3.adv--title.info-block--title 
 								|АРХИВ ПРОГРАММ ЗА 
@@ -99,7 +105,7 @@ html
 							p.adv--desc.info-block--desc Смотри любимые шоу в течение 2-х недель после их показа на RedMax.TV
 						//.row
 						// Adv 4
-						.adv.info-block
+						.adv.info-block.wow.fadeInUp
 							.circle
 							h3.adv--title.info-block--title 
 								|САМОЕ 
@@ -107,7 +113,7 @@ html
 								|ОБОРУДОВАНИЕ
 							p.adv--desc.info-block--desc Мощная приставка нового поколения со скоростным браузером и популярными играми от RedMax.TV
 						// Adv 5
-						.adv.info-block
+						.adv.info-block.wow.fadeInUp(data-wow-delay="0.1s")
 							.circle
 							h3.adv--title.info-block--title 
 								span.highlight СКОРОСТЬ 
@@ -115,7 +121,7 @@ html
 							p.adv--desc.info-block--desc 2 дня – максимальный срок подключения к RedMax.TV. Сегодня заказал – завтра смотришь.
 
 						// Adv 6
-						.adv.info-block
+						.adv.info-block.wow.fadeInUp(data-wow-delay="0.2s")
 							.circle
 							h3.adv--title.info-block--title 
 								span.highlight Презентация 
@@ -125,15 +131,15 @@ html
 			section#prices.prices
 				.container
 					h2.heading-block.heading-block-sm.heading-block-center
-						span.heading-block--title.prices--subtitle Акции и тарифы
-						span.text-logo 
+						span.heading-block--title.prices--subtitle.wow.fadeIn Акции и тарифы
+						span.text-logo.wow.fadeIn
 							|Red
 							span.highlight max
 					.price-package-list.swiper-container
 						.swiper-wrapper
 							+price-simple('Стример IP TV', 'RedMax', ['более 100000 клиентов по всему миру', 'универсальное IPTV устройство', '4К разрешение + 3D картинка', 'компактный размер'])
-							+price-highlight('ТАРИФ', 'ОПТИМАЛЬНЫЙ', '65', ['техническая поддержка 24/7', '250+ каналов', 'видеотека 10000 каналов', 'более 10 языков для просмотра каналов'])
-							+price-simple('Рассрочка', 'RedMax', ['без переплат', 'удобная система оплаты', 'на 12 месяцев и на 18 месяцев', 'удобный график подключения'])
+							+price-highlight('ТАРИФ', 'ОПТИМАЛЬНЫЙ', '75', ['техническая поддержка 24/7', '250+ каналов', 'видеотека 10000 каналов', 'более 10 языков для просмотра каналов'])
+							+price-simple1('Рассрочка', 'RedMax', ['без переплат', 'удобная система оплаты', 'на 12 месяцев и на 18 месяцев', 'удобный график подключения'])
 					p.prices--text Мы предоставляем качественное обслуживание своим клиентам от Эйлата и до cевера страны.
 			//- 
 				// Partnership
@@ -158,47 +164,51 @@ html
 							img(src="img/film-cards.png", alt="")
 			
 			// About Us
-			section#about-us.about-us
-				.container
-					.about-us--block.col-4-10
-						h2.about-us--title 
-							span.highlight RedMax.TV
-							|–
-							br
-							| современное цифровое телевиденье. № 1 в Израиле.
-						p.about-us--text Высокое качество изображения и многоканальный цифровой звук. Популярные российские, израильские и международные телеканалы. Недорогие услуги скоростного интернета (совместно с компанией «InterHost»). Полное лицензирование медийной деятельности.
-						ul.stats
-							li.stats--item
-								span.stats--num 2014
-								span.stats--text предоставляем услуги IP-телевиденья.
-							li.stats--item
-								span.stats--num 10000
-								span.stats--text постоянных пользователей
-							li.stats--item
-								span.stats--num 450
-								span.stats--text популярных телеканалов
-						.btn-row
-							.btn.btn-lg.btn-red.btn-pop-up Смотреть RedMax.TV
-							.simple-btn.btn-pop-up-welcome Пригласить друга
-					.about-us--tv
-						img(src="img/devices-tv.png", alt="")
-					.about-us--phone
-						img(src="img/devices-phone.png", alt="")
+			section#about-us
+				#parallax-viewport-1.parallax-viewport.wow.fadeIn
+				.about-us
+					.container
+						.about-us--block.col-4-10.wow.fadeInLeft
+							h2.about-us--title 
+								span.highlight RedMax.TV
+								|–
+								br
+								| современное цифровое телевидение. № 1 в Израиле.
+							p.about-us--text Высокое качество изображения и многоканальный цифровой звук. Популярные российские, израильские и международные телеканалы. Недорогие услуги скоростного интернета (совместно с компанией «InterHost»). Полное лицензирование медийной деятельности.
+							ul.stats
+								li.stats--item
+									span.stats--num.wow.fadeIn(data-wow-delay="0.1s")
+										span.timer(data-from="0" data-to="3" data-refresh-interval="100")
+										span  года
+									span.stats--text безупречной работы
+								li.stats--item.wow.fadeIn(data-wow-delay="0.3s")
+									span.stats--num.timer(data-from="0" data-to="24000")
+									span.stats--text постоянных клиентов
+								li.stats--item.wow.fadeIn(data-wow-delay="0.5s")
+									span.stats--num.timer(data-from="0" data-to="200")
+									span.stats--text популярных каналов
+							.btn-row
+								.btn.btn-lg.btn-red.btn-pop-up Смотреть RedMax.TV
+								.simple-btn.btn-pop-up-welcome Пригласить друга
+						.about-us--tv.wow.fadeIn(data-wow-delay="0.5s")
+							img(src="img/devices-tv.png", alt="")
+						.about-us--phone.wow.fadeInLeft(data-wow-delay="0.5s")
+							img(src="img/devices-phone.png", alt="")
 
 			// Feedbacks
 			section#feedbacks.feedbacks
 				.container
 					.heading-block.heading-block-lg.heading-block-center
-						h2.heading-block--title
+						h2.heading-block--title.wow.fadeIn
 							|Отзывы клиентов 
 							span.highlight «RedMax TV»
-						p.heading-block--subtitle Телевиденье высокого качества от Эйлата до Кирьят-Шмона.
+						p.heading-block--subtitle.wow.fadeIn Телевиденье высокого качества от Эйлата до Кирьят-Шмона.
 				.swiper-container.feedback-slider
 					.swiper-wrapper
-						+feedback('Библиотека фильмов раздела кино разделена по жанрам. Очень удобно. Фильмы и сериалы постоянно добавляют.', 'feedback-img-1.jpeg', 'Евгений Кац', 'Архитектор', '(г. Бэер-Шева)')
-						+feedback('С RedMax 2 года. Все основное работает. Качество отличное – хватает на 47 дюймов и HD без тормозов.', 'feedback-img-2.jpeg', 'Марк Аборов', 'Спотривный тренер', '(г. Нетания)')
-						+feedback('Картинка не сыпется. Буферизацию не чувствую. В целом, полёт нормальный.', 'feedback-img-3.jpeg', 'Антон Шаган', 'Финансист', '(г. Тель-Авив)')
-						+feedback('Есть всё, что я люблю: футбол, документалистика, мультики внуку. В библиотеке хороша подборка исторических фильмов.', 'feedback-img-4.jpeg', 'Марк Томпсон', 'Маркетолог', '(г. Тель-Авив)')
+						+feedback1('Как только подключился несколько месяцев назад, начал смотреть много кино. Однако в базе RedMax.TV постоянно нахожу что-то новое. Очень радует качество изображения. И за все время - никаких проблем!', 'feedback-img-1.jpeg', 'Антон Шаган', 'Архитектор', '(г. Бэер-Шева)')
+						+feedback2('Решил подключиться совсем недавно, из интереса. Теперь, с таким количеством каналов остаюсь всегда в курсе всего самого актуального. А если что-то пропустил, то есть возможность посмотреть и позже. Очень удобно и полезно.', 'feedback-img-2.jpeg', 'Евгений Кац', 'Спотривный тренер', '(г. Нетания)')
+						+feedback3('С RedMax.TV сериалы никогда не заканчиваются. Всегда можно отлично расслабиться перед телевизором, или выбрать что-то для всей семьи. За два года позвали мастера всего один раз, чтобы поставить новейшее оборудование.', 'feedback-img-3.jpg', 'Александра Минакова', 'Финансист', '(г. Тель-Авив)')
+						+feedback('Всегда было сложно найти, что смотреть, но с RedMax.TV научилась выбирать фильмы и программы легко и быстро. Выбор большой, поэтому можно перепробовать очень многое, и найти для себя что-то действительно стоящее.', 'feedback-img.jpg', 'Елена Басандовская', 'Маркетолог', '(г. Тель-Авив)')
 					.slider-btn.slider-btn-prev
 						include img/slider-btn-prev.svg
 					.slider-btn.slider-btn-next
@@ -206,20 +216,20 @@ html
 			section#cta.cta
 				.container
 					.heading-block.heading-block-sm.heading-block-center
-						span.text-logo
+						span.text-logo.wow.fadeIn
 							|Red
 							span.highlight max
-						span.heading-block--title.cta--title Смотри бесплатно любимые шоу и сериалы.
-						span.heading-block--subtitle.cta--subtitle До конца года - месяц цифрового телевиденья в подарок*
+						span.heading-block--title.cta--title.wow.fadeIn Смотри бесплатно любимые шоу и сериалы.
+						span.heading-block--subtitle.cta--subtitle.wow.fadeIn До конца года - месяц цифрового телевиденья в подарок*
 						form.cta-form(method="post", action="send.php")
-							.input-field
+							.input-field.wow.fadeIn(data-wow-offset="100")
 								input(name="name", type="text", placeholder="Введи свое имя")
 								//
 									span.input-field--check
-							.input-field.input-field-validation
+							.input-field.input-field-validation.wow.fadeIn(data-wow-offset="100")
 								input(name="email" type="email", placeholder="Введи свой e-mail адрес")
 								span.input-field--check
-							p.heading-block--text.cta--text *Акция действует при условиях подключения не менее, чем на 12 месяцев.
+							p.heading-block--text.cta--text.wow.fadeIn(data-wow-offset="100") *Акция действует при условиях подключения не менее, чем на 12 месяцев.
 							input(type="submit", value="Заказать подключение").btn.btn-submit.btn-red.btn-sm
 			.pop-up-overlay
 			include template/pop-up
@@ -240,9 +250,6 @@ html
 		script(type="text/javascript", src="js/swiper.jquery.min.js")
 		script(type="text/javascript", src="js/jquery.validate.min.js")
 		script(type="text/javascript", src="js/main.js")
-
-
-
-
-
-
+		script(type="text/javascript", src="js/wow.min.js")
+		script(type="text/javascript", src="js/jquery.parallax.js")
+		script(type="text/javascript", src="js/jquery.countTo.js")

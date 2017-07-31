@@ -8,20 +8,22 @@ var gulp = require('gulp'),
 	mainBowerFiles = require('gulp-main-bower-files'),
 	filter = require('gulp-filter'),
 	merge = require('merge-stream'),
+	csso = require('gulp-csso'),
 	imagemin = require('gulp-imagemin');
 
 // pathes to files
 var paths = {
 	scss: ['src/css/*.scss' , 'src/*.scss'],
-	jade: ['src/*.jade', 'src/template/*.jade'],
+	jade: ['src/*.jade'],
 	scripts: ['src/js/*.js'],
-	images: ['src/img/*']
+	images: ['src/img/*.png', 'src/img/*.jpg', 'src/img/*.jpeg']
 }
 
 // scss to css
 gulp.task('css', function () {
 	return gulp.src(paths.scss)
 			.pipe(sass())
+  			.pipe(csso())
 			.pipe(autoprefixer({
 				  browsers: ['last 2 versions']
 			}))

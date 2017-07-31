@@ -4,10 +4,36 @@ mixin offer(title, text)
 		.circle
 		h2.offer--title.info-block--title= title
 		p.info-block--desc= text
+mixin offer1(title, text)
+	.offer.info-block.col-3-10.wow.fadeInLeft
+		.circle
+		h2.offer--title.info-block--title= title
+		p.info-block--desc= text
+mixin offer2(title, text)
+	.offer.info-block.col-3-10.wow.fadeInRight
+		.circle
+		h2.offer--title.info-block--title= title
+		p.info-block--desc= text
 
 //- Simple price package
 mixin price-simple(name1, name2, texts)
-	.swiper-slide.price-package.price-package-simple.btn-pop-up
+	.swiper-slide.price-package.price-package-simple.btn-pop-up.wow.fadeInUp(data-wow-delay="0.2s")
+		h3.price-package--name
+			span= name1
+			span= name2
+		//-p.price-package--term= term
+		.price-package--price.price
+			//-
+				span.price--amount= price
+				span.price--currency ₪/мес	
+			
+		ul.price-package--feature
+			each text in texts
+				li= text
+		
+		.btn.btn-blue.btn-sm Смотреть RedMax TV
+mixin price-simple1(name1, name2, texts)
+	.swiper-slide.price-package.price-package-simple.btn-pop-up.wow.fadeInUp(data-wow-delay="0.2s")
 		h3.price-package--name
 			span= name1
 			span= name2
@@ -25,7 +51,7 @@ mixin price-simple(name1, name2, texts)
 
 //- Highlighted price package
 mixin price-highlight(name1, name2, price, texts)
-	.swiper-slide.price-package.price-package-highlight.btn-pop-up
+	.swiper-slide.price-package.price-package-highlight.btn-pop-up.wow.fadeInUp
 		//p.price-package--term= term
 		h3.price-package--name 
 			span= name1
@@ -41,6 +67,33 @@ mixin price-highlight(name1, name2, price, texts)
 
 mixin feedback(text, photo, name, profession, city)
 	.swiper-slide.feedback
+		p.feedback--text= text
+		.feedback--info
+			.feedback--photo(style="background-image: url(img/#{photo});")
+			.feedback--desc
+				.feedback--name= name
+				p= profession
+				p= city
+mixin feedback1(text, photo, name, profession, city)
+	.swiper-slide.feedback.wow.fadeInUp(data-wow-delay="0.1s")
+		p.feedback--text= text
+		.feedback--info
+			.feedback--photo(style="background-image: url(img/#{photo});")
+			.feedback--desc
+				.feedback--name= name
+				p= profession
+				p= city
+mixin feedback2(text, photo, name, profession, city)
+	.swiper-slide.feedback.wow.fadeInUp(data-wow-delay="0.2s")
+		p.feedback--text= text
+		.feedback--info
+			.feedback--photo(style="background-image: url(img/#{photo});")
+			.feedback--desc
+				.feedback--name= name
+				p= profession
+				p= city
+mixin feedback3(text, photo, name, profession, city)
+	.swiper-slide.feedback.wow.fadeInUp(data-wow-delay="0.3s")
 		p.feedback--text= text
 		.feedback--info
 			.feedback--photo(style="background-image: url(img/#{photo});")

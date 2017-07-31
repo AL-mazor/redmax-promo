@@ -6,7 +6,8 @@
     <meta name="description" content="Современное IPTV от RedMax - 450 HD каналов и огромная коллекция фильмов. Закажи подключение сейчас и получи бесплатный месяц использования!">
     <meta name="yandex-verification" content="133bc8fcd136d7e3">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.02">
+    <link rel="stylesheet" href="animate.css">
     <title>Современное IPTV в Израиле - цифровое телевидение RedMax</title>
     <!--include callback.js
     -->
@@ -26,9 +27,9 @@
         <div class="header--nav">
           <nav class="primary-nav">
             <ul>
-              <li class="primary-nav--item"><a href="#about-us">О нас</a></li>
               <li class="primary-nav--item"><a href="#advantages">Преимущества</a></li>
               <li class="primary-nav--item"><a href="#prices">Тарифы</a></li>
+              <li class="primary-nav--item"><a href="#about-us">О нас</a></li>
               <li class="primary-nav--item"><a href="#feedbacks">Отзывы</a></li>
               <li class="primary-nav--item"><a href="#cta">Контакты</a></li>
             </ul>
@@ -37,18 +38,16 @@
       </div>
     </header>
     <main>
-      <div id="page-overlay" class="page-overlay">
+      <div id="parallax-viewport" data-wow-delay="0.6s" class="parallax-viewport wow fadeIn"></div>
+      <div id="page-overlay" class="page-overlay"><span class="page-overlay-bg"></span>
         <div class="container">
           <div class="page-overlay--inner">
-            <h1 class="text-logo"><span class="highlight">red</span><span>max</span></h1>
-            <div class="page-overlay--subtitle">
-               
-              Лучшее русское IPTV Израиля. <br>Новое лицо, неизменно высокое качество.
-            </div>
-            <div class="btn btn-lg btn-red btn-pop-up">Заказать подключение</div>
+            <h1 class="text-logo wow fadeIn"><span class="highlight">red</span><span>max</span></h1>
+            <div class="page-overlay--subtitle wow fadeInUp">Лучшее IPTV Израиля на русском языке.<br>Лидеры в своей сфере - на новом уровне!</div>
+            <div data-wow-delay="0.4s" class="btn btn-lg btn-red btn-pop-up wow fadeIn">Заказать подключение</div>
           </div>
         </div>
-        <div class="tv-tuner"></div>
+        <div data-wow-delay="0.4s" class="tv-tuner wow fadeInUp"></div>
         <div class="gradient"></div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
     <defs>
       <style>
@@ -114,24 +113,24 @@
       <div class="offers">
         <div class="container">
           <div class="row">
-                <div class="offer info-block col-3-10">
+                <div class="offer info-block col-3-10 wow fadeInLeft">
                   <div class="circle"></div>
                   <h2 class="offer--title info-block--title">Более 10000 фильмов</h2>
                   <p class="info-block--desc">Видеотека на любой вкус. Архив популярных программ за 2 недели.</p>
                 </div>
-                <div class="offer info-block col-3-10">
+                <div class="offer info-block col-3-10 wow fadeInRight">
                   <div class="circle"></div>
                   <h2 class="offer--title info-block--title">качественный сигнал</h2>
                   <p class="info-block--desc">Яркая насыщенная цветами картинка, многоканальный звук, отсутствие шумов и помех.</p>
                 </div>
           </div>
           <div class="row">
-                <div class="offer info-block col-3-10">
+                <div class="offer info-block col-3-10 wow fadeInLeft">
                   <div class="circle"></div>
                   <h2 class="offer--title info-block--title">ЛЕГКОСТЬ ПОДКЛЮЧЕНИЯ</h2>
                   <p class="info-block--desc">Возможность смотреть любимые телепередачи везде, где есть интернет: дома, в офисе, в загородном коттедже.</p>
                 </div>
-                <div class="offer info-block col-3-10">
+                <div class="offer info-block col-3-10 wow fadeInRight">
                   <div class="circle"></div>
                   <h2 class="offer--title info-block--title">ОПТИМАЛЬНЫЕ ПАКЕТЫ</h2>
                   <p class="info-block--desc">Подборка лучших русских и мировых телеканалов по самым выгодным ценам.</p>
@@ -141,34 +140,39 @@
       </div>
       <section id="videos" class="row">
         <div class="video-block video-block-main">
-          <iframe src="https://www.youtube.com/embed/CD4V9uoY2I4?rel=0?ecver=1" frameborder="0" allowfullscreen></iframe>
+          <div id="CD4V9uoY2I4" class="youtube wow fadeIn"></div>
+          <!--iframe(src="https://www.youtube.com/embed/CD4V9uoY2I4?rel=0?ecver=1", frameborder="0", allowfullscreen).wow.fadeIn-->
         </div>
         <div class="video-block video-block-additional">
-          <iframe src="https://www.youtube.com/embed/Itv-gSCv3p4?rel=0?ecver=1" frameborder="0" allowfullscreen></iframe>
-          <iframe src="https://www.youtube.com/embed/l7GlExx5-Bk?rel=0?ecver=1" frameborder="0" allowfullscreen></iframe>
+          <div class="video-block-additional-two">
+            <div id="Itv-gSCv3p4" data-wow-delay="0.2s" class="youtube wow fadeIn"></div>
+          </div>
+          <div class="video-block-additional-two">
+            <div id="l7GlExx5-Bk" class="youtube wow fadeIn"></div>
+          </div>
         </div>
       </section>
       <section id="advantages" class="advantages">
         <div class="container">
           <div class="heading-block heading-block-sm heading-block-center">
-            <h2 class="heading-block--title advantages--title">Преимущества <span class="highlight">«RedMax TV»</span></h2>
-            <p class="heading-block--desc">Наша аудитория от Эйлата до Кирьят-Шмона</p>
+            <h2 class="heading-block--title advantages--title wow fadeIn">Преимущества <span class="highlight">«RedMax TV»</span></h2>
+            <p class="heading-block--desc wow fadeIn">Наша аудитория от Эйлата до Кирьят-Шмона</p>
           </div>
           <div class="row">
             <!-- Adv 1-->
-            <div class="adv info-block">
+            <div class="adv info-block wow fadeInUp">
               <div class="circle"></div>
               <h3 class="adv--title info-block--title"> <span class="highlight">ЛУЧШЕЕ </span>ТЕЛЕВИДЕНИЕ НА РУССКОМ ЯЗЫКЕ</h3>
               <p class="adv--desc info-block--desc">Самые популярные русскоязычные каналы в высоком разрешении на RedMax.TV</p>
             </div>
             <!-- Adv 2-->
-            <div class="adv info-block">
+            <div data-wow-delay="0.1s" class="adv info-block wow fadeInUp">
               <div class="circle"></div>
               <h3 class="adv--title info-block--title"> <span class="highlight">ОГРОМНЫЙ </span>ВЫБОР ТЕЛЕКАНАЛОВ</h3>
-              <p class="adv--desc info-block--desc">С RedMax.TV более 450 популярных телеканалов на любой вкус </p>
+              <p class="adv--desc info-block--desc">С RedMax.TV более 200 популярных телеканалов на любой вкус </p>
             </div>
             <!-- Adv 3-->
-            <div class="adv info-block">
+            <div data-wow-delay="0.2s" class="adv info-block wow fadeInUp">
               <div class="circle"></div>
               <h3 class="adv--title info-block--title">
                  
@@ -178,7 +182,7 @@
             </div>
             <!--.row-->
             <!-- Adv 4-->
-            <div class="adv info-block">
+            <div class="adv info-block wow fadeInUp">
               <div class="circle"></div>
               <h3 class="adv--title info-block--title">
                  
@@ -187,13 +191,13 @@
               <p class="adv--desc info-block--desc">Мощная приставка нового поколения со скоростным браузером и популярными играми от RedMax.TV</p>
             </div>
             <!-- Adv 5-->
-            <div class="adv info-block">
+            <div data-wow-delay="0.1s" class="adv info-block wow fadeInUp">
               <div class="circle"></div>
               <h3 class="adv--title info-block--title"> <span class="highlight">СКОРОСТЬ </span>ПОДКЛЮЧЕНИЯ</h3>
               <p class="adv--desc info-block--desc">2 дня – максимальный срок подключения к RedMax.TV. Сегодня заказал – завтра смотришь.</p>
             </div>
             <!-- Adv 6-->
-            <div class="adv info-block">
+            <div data-wow-delay="0.2s" class="adv info-block wow fadeInUp">
               <div class="circle"></div>
               <h3 class="adv--title info-block--title"> <span class="highlight">Презентация </span><br>RedMax TV</h3>
               <p class="adv--desc info-block--desc">Оцени качество RedMax.TV ещё до оплаты. Мы произведём презентацию на дому или в офисе</p>
@@ -203,12 +207,10 @@
       </section>
       <section id="prices" class="prices">
         <div class="container">
-          <h2 class="heading-block heading-block-sm heading-block-center"><span class="heading-block--title prices--subtitle">Акции и тарифы</span><span class="text-logo">
-               
-              Red<span class="highlight">max</span></span></h2>
+          <h2 class="heading-block heading-block-sm heading-block-center"><span class="heading-block--title prices--subtitle wow fadeIn">Акции и тарифы</span><span class="text-logo wow fadeIn">Red<span class="highlight">max</span></span></h2>
           <div class="price-package-list swiper-container">
             <div class="swiper-wrapper">
-                  <div class="swiper-slide price-package price-package-simple btn-pop-up">
+                  <div data-wow-delay="0.2s" class="swiper-slide price-package price-package-simple btn-pop-up wow fadeInUp">
                     <h3 class="price-package--name"><span>Стример IP TV</span><span>RedMax</span></h3>
                     <div class="price-package--price price">
                     </div>
@@ -220,10 +222,10 @@
                     </ul>
                     <div class="btn btn-blue btn-sm">Смотреть RedMax TV</div>
                   </div>
-                  <div class="swiper-slide price-package price-package-highlight btn-pop-up">
+                  <div class="swiper-slide price-package price-package-highlight btn-pop-up wow fadeInUp">
                     <!--p.price-package--term= term-->
                     <h3 class="price-package--name"> <span>ТАРИФ</span><span class="name">ОПТИМАЛЬНЫЙ</span></h3>
-                    <div class="price-package--price price"><span class="price--amount">65</span><span class="price--currency">₪/мес</span></div>
+                    <div class="price-package--price price"><span class="price--amount">75</span><span class="price--currency">₪/мес</span></div>
                     <ul class="price-package--feature">
                       <li>техническая поддержка 24/7</li>
                       <li>250+ каналов</li>
@@ -232,7 +234,7 @@
                     </ul>
                     <div class="btn btn-red btn-lg">Смотреть RedMax TV</div>
                   </div>
-                  <div class="swiper-slide price-package price-package-simple btn-pop-up">
+                  <div data-wow-delay="0.2s" class="swiper-slide price-package price-package-simple btn-pop-up wow fadeInUp">
                     <h3 class="price-package--name"><span>Рассрочка</span><span>RedMax</span></h3>
                     <div class="price-package--price price">
                     </div>
@@ -250,74 +252,77 @@
         </div>
       </section>
       <!-- About Us-->
-      <section id="about-us" class="about-us">
-        <div class="container">
-          <div class="about-us--block col-4-10">
-            <h2 class="about-us--title"> <span class="highlight">RedMax.TV</span>–<br>современное цифровое телевиденье. № 1 в Израиле.</h2>
-            <p class="about-us--text">Высокое качество изображения и многоканальный цифровой звук. Популярные российские, израильские и международные телеканалы. Недорогие услуги скоростного интернета (совместно с компанией «InterHost»). Полное лицензирование медийной деятельности.</p>
-            <ul class="stats">
-              <li class="stats--item"><span class="stats--num">2014</span><span class="stats--text">предоставляем услуги IP-телевиденья.</span></li>
-              <li class="stats--item"><span class="stats--num">10000</span><span class="stats--text">постоянных пользователей</span></li>
-              <li class="stats--item"><span class="stats--num">450</span><span class="stats--text">популярных телеканалов</span></li>
-            </ul>
-            <div class="btn-row">
-              <div class="btn btn-lg btn-red btn-pop-up">Смотреть RedMax.TV</div>
-              <div class="simple-btn btn-pop-up-welcome">Пригласить друга</div>
+      <section id="about-us">
+        <div id="parallax-viewport-1" class="parallax-viewport wow fadeIn"></div>
+        <div class="about-us">
+          <div class="container">
+            <div class="about-us--block col-4-10 wow fadeInLeft">
+              <h2 class="about-us--title"> <span class="highlight">RedMax.TV</span>–<br>современное цифровое телевидение. № 1 в Израиле.</h2>
+              <p class="about-us--text">Высокое качество изображения и многоканальный цифровой звук. Популярные российские, израильские и международные телеканалы. Недорогие услуги скоростного интернета (совместно с компанией «InterHost»). Полное лицензирование медийной деятельности.</p>
+              <ul class="stats">
+                <li class="stats--item"><span data-wow-delay="0.1s" class="stats--num wow fadeIn"><span data-from="0" data-to="3" data-refresh-interval="100" class="timer"></span><span> года</span></span><span class="stats--text">безупречной работы</span></li>
+                <li data-wow-delay="0.3s" class="stats--item wow fadeIn"><span data-from="0" data-to="24000" class="stats--num timer"></span><span class="stats--text">постоянных клиентов</span></li>
+                <li data-wow-delay="0.5s" class="stats--item wow fadeIn"><span data-from="0" data-to="200" class="stats--num timer"></span><span class="stats--text">популярных каналов</span></li>
+              </ul>
+              <div class="btn-row">
+                <div class="btn btn-lg btn-red btn-pop-up">Смотреть RedMax.TV</div>
+                <div class="simple-btn btn-pop-up-welcome">Пригласить друга</div>
+              </div>
             </div>
+            <div data-wow-delay="0.5s" class="about-us--tv wow fadeIn"><img src="img/devices-tv.png" alt=""></div>
+            <div data-wow-delay="0.5s" class="about-us--phone wow fadeInLeft"><img src="img/devices-phone.png" alt=""></div>
           </div>
-          <div class="about-us--tv"><img src="img/devices-tv.png" alt=""></div>
-          <div class="about-us--phone"><img src="img/devices-phone.png" alt=""></div>
         </div>
       </section>
       <!-- Feedbacks-->
       <section id="feedbacks" class="feedbacks">
         <div class="container">
           <div class="heading-block heading-block-lg heading-block-center">
-            <h2 class="heading-block--title">Отзывы клиентов <span class="highlight">«RedMax TV»</span></h2>
-            <p class="heading-block--subtitle">Телевиденье высокого качества от Эйлата до Кирьят-Шмона.</p>
+            <h2 class="heading-block--title wow fadeIn">Отзывы клиентов <span class="highlight">«RedMax TV»</span></h2>
+            <p class="heading-block--subtitle wow fadeIn">Телевиденье высокого качества от Эйлата до Кирьят-Шмона.</p>
           </div>
         </div>
         <div class="swiper-container feedback-slider">
           <div class="swiper-wrapper">
-                <div class="swiper-slide feedback">
-                  <p class="feedback--text">Библиотека фильмов раздела кино разделена по жанрам. Очень удобно. Фильмы и сериалы постоянно добавляют.</p>
+                <div data-wow-delay="0.1s" class="swiper-slide feedback wow fadeInUp">
+                  <p class="feedback--text">Как только подключился несколько месяцев назад, начал смотреть много кино. Однако в базе RedMax.TV постоянно нахожу что-то новое. Очень радует качество изображения. И за все время - никаких проблем!</p>
                   <div class="feedback--info">
                     <div style="background-image: url(img/feedback-img-1.jpeg);" class="feedback--photo"></div>
                     <div class="feedback--desc">
-                      <div class="feedback--name">Евгений Кац</div>
+                      <div class="feedback--name">Антон Шаган</div>
                       <p>Архитектор</p>
                       <p>(г. Бэер-Шева)</p>
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide feedback">
-                  <p class="feedback--text">С RedMax 2 года. Все основное работает. Качество отличное – хватает на 47 дюймов и HD без тормозов.</p>
+                <div data-wow-delay="0.2s" class="swiper-slide feedback wow fadeInUp">
+                  <p class="feedback--text">Решил подключиться совсем недавно, из интереса. Теперь, с таким количеством каналов остаюсь всегда в курсе всего самого актуального. А если что-то пропустил, то есть возможность посмотреть и позже. Очень удобно и полезно.</p>
                   <div class="feedback--info">
                     <div style="background-image: url(img/feedback-img-2.jpeg);" class="feedback--photo"></div>
                     <div class="feedback--desc">
-                      <div class="feedback--name">Марк Аборов</div>
+                      <div class="feedback--name">Евгений Кац</div>
                       <p>Спотривный тренер</p>
                       <p>(г. Нетания)</p>
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide feedback">
-                  <p class="feedback--text">Картинка не сыпется. Буферизацию не чувствую. В целом, полёт нормальный.</p>
+                <div data-wow-delay="0.3s" class="swiper-slide feedback wow fadeInUp">
+                  <p class="feedback--text">С RedMax.TV сериалы никогда не заканчиваются. Всегда можно отлично расслабиться перед телевизором, или выбрать что-то для всей семьи. За два года позвали мастера всего один раз, чтобы поставить новейшее оборудование.</p>
                   <div class="feedback--info">
-                    <div style="background-image: url(img/feedback-img-3.jpeg);" class="feedback--photo"></div>
+                    <div style="background-image: url(img/feedback-img-3.jpg);" class="feedback--photo"></div>
                     <div class="feedback--desc">
-                      <div class="feedback--name">Антон Шаган</div>
+                      <div class="feedback--name">Александра Минакова</div>
                       <p>Финансист</p>
                       <p>(г. Тель-Авив)</p>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-slide feedback">
-                  <p class="feedback--text">Есть всё, что я люблю: футбол, документалистика, мультики внуку. В библиотеке хороша подборка исторических фильмов.</p>
+                  <p class="feedback--text">Всегда было сложно найти, что смотреть, но с RedMax.TV научилась выбирать фильмы и программы легко и быстро. Выбор большой, поэтому можно перепробовать очень многое, и найти для себя что-то действительно стоящее.</p>
                   <div class="feedback--info">
-                    <div style="background-image: url(img/feedback-img-4.jpeg);" class="feedback--photo"></div>
+                    <div style="background-image: url(img/feedback-img.jpg);" class="feedback--photo"></div>
                     <div class="feedback--desc">
-                      <div class="feedback--name">Марк Томпсон</div>
+                      <div class="feedback--name">Елена Басандовская</div>
                       <p>Маркетолог</p>
                       <p>(г. Тель-Авив)</p>
                     </div>
@@ -336,17 +341,17 @@
       </section>
       <section id="cta" class="cta">
         <div class="container">
-          <div class="heading-block heading-block-sm heading-block-center"><span class="text-logo">Red<span class="highlight">max</span></span><span class="heading-block--title cta--title">Смотри бесплатно любимые шоу и сериалы.</span><span class="heading-block--subtitle cta--subtitle">До конца года - месяц цифрового телевиденья в подарок*</span>
+          <div class="heading-block heading-block-sm heading-block-center"><span class="text-logo wow fadeIn">Red<span class="highlight">max</span></span><span class="heading-block--title cta--title wow fadeIn">Смотри бесплатно любимые шоу и сериалы.</span><span class="heading-block--subtitle cta--subtitle wow fadeIn">До конца года - месяц цифрового телевиденья в подарок*</span>
             <form method="post" action="send.php" class="cta-form">
-              <div class="input-field">
+              <div data-wow-offset="100" class="input-field wow fadeIn">
                 <input name="name" type="text" placeholder="Введи свое имя">
                 <!--span.input-field--check
                 -->
               </div>
-              <div class="input-field input-field-validation">
+              <div data-wow-offset="100" class="input-field input-field-validation wow fadeIn">
                 <input name="email" type="email" placeholder="Введи свой e-mail адрес"><span class="input-field--check"></span>
               </div>
-              <p class="heading-block--text cta--text">*Акция действует при условиях подключения не менее, чем на 12 месяцев.</p>
+              <p data-wow-offset="100" class="heading-block--text cta--text wow fadeIn">*Акция действует при условиях подключения не менее, чем на 12 месяцев.</p>
               <input type="submit" value="Заказать подключение" class="btn btn-submit btn-red btn-sm">
             </form>
           </div>
@@ -452,5 +457,8 @@ chosen link or button. -->
     <script type="text/javascript" src="js/swiper.jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/jquery.parallax.js"></script>
+    <script type="text/javascript" src="js/jquery.countTo.js"></script>
   </body>
 </html>

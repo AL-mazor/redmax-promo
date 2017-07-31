@@ -12,6 +12,7 @@
 	max-width: 1600px;
 	margin: 0 auto;
 	position: relative;
+	z-index: 1;
 	@include respond-to($lg-desk) {
 		max-width: 1200px;
 	}
@@ -32,12 +33,19 @@ body {
 	color: $bl;
 	font-family: Lato;
 	position: relative;
+	overflow-x: hidden;
 	@include respond-to($lg-desk) {
 		font-size: 16px;
 	}
 	@include respond-to($lg-mob) {
 		font-size: 14px;
 	}
+}
+
+section {
+    position: relative;
+    background: $wh;
+	z-index: 1;
 }
 
 ul {
@@ -258,8 +266,9 @@ h1, h2, h3, h4, h5, h6 {margin: 0;}
 *** Header
 **********************/
 .header {
-	position: relative;
-	z-index: 1;
+	position: absolute;
+	width: 100%;
+	z-index: 2;
 	height: 140px;
 	transition: height .4s, background-color .1s;
 	@include respond-to($lg-desk) {
@@ -496,6 +505,34 @@ h1, h2, h3, h4, h5, h6 {margin: 0;}
 	}
 }
 
+.parallax-viewport {
+    position: absolute;
+    background: url(img/bg-anim.png) no-repeat;
+    background-position: center top;
+    z-index: 1;
+    width: 96%;
+    height: 96%;
+	background-size: contain;
+    transform: translateX(2%);
+	@include respond-to($lg-mob) {
+		display: none;
+	}
+}
+
+.parallax-viewport#parallax-viewport-1 {
+    position: absolute;
+    background: url(img/bg-anim-1.png) no-repeat;
+    background-position: center top;
+    z-index: 1;
+    width: 96%;
+    height: 96%;
+	background-size: 100% 100%;
+    transform: translateX(2%);
+	@include respond-to($lg-mob) {
+		display: none;
+	}
+}
+
 /*********************
 *** Page Overlay
 **********************/
@@ -505,15 +542,21 @@ h1, h2, h3, h4, h5, h6 {margin: 0;}
 	position: relative;
 	min-height: 925px;
 	height: 100vh;
-	margin-top: -140px;
 	padding-top: 10%;
-	background-image: url(img/page-overlay-bg.jpg);
-	@include bg-cover;
-	background-position: center 70px;
+	&-bg {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		background-image: url(img/page-overlay-bg.jpg);
+		@include bg-cover;
+		background-position: center 70px;
+		
+	}
 	@include respond-to($lg-desk) {
 		min-height: 760px;
 		padding-top: 140px;
-		margin-top: -120px;
 	}
 	@include respond-to($sm-desk) {
 		padding-top: 13%;
@@ -521,12 +564,10 @@ h1, h2, h3, h4, h5, h6 {margin: 0;}
 	@include respond-to($tab) {
 		height: 30vh;
 		min-height: 660px;
-		margin-top: -80px;
 	}
 	@include respond-to($lg-mob) {
 		height: 100vh;
 		min-height: 650px;
-		margin-top: -75px;
 	}
 	@include respond-to($lg-mob-port) {
 		padding-top: 130px;
@@ -641,6 +682,8 @@ h1, h2, h3, h4, h5, h6 {margin: 0;}
 
 .offers {
 	padding: 48px 0;
+    background: $wh;
+    position: relative;
 	@include respond-to($tab) {
 		padding-top: 100px;
 	}
@@ -693,6 +736,7 @@ h1, h2, h3, h4, h5, h6 {margin: 0;}
 **********************/
 
 .about-us {
+	position: relative;
 	padding: 130px 0;
 	background: #f5f5f5; /* Old browsers */
 	box-shadow: 0 0 32px 0 rgba(35, 71, 95, 0.17);
@@ -919,6 +963,7 @@ h1, h2, h3, h4, h5, h6 {margin: 0;}
 	}
 	&-additional {
 		width: 33.33333333%;
+		padding-bottom: 0;
 		@include respond-to($tab) {
 			width: 100%;
 		}
@@ -942,6 +987,10 @@ h1, h2, h3, h4, h5, h6 {margin: 0;}
 				height: 100%;
 				width: 50%;
 			}
+		}
+		&-two {
+			position: relative;
+			padding-bottom: 56.3%;
 		}
 	}
 }
@@ -1526,7 +1575,7 @@ h1, h2, h3, h4, h5, h6 {margin: 0;}
   		}
   	}
   	&--name {
-  		font-size: 24px;
+  		font-size: 20px;
   		font-weight: 700;
   		color: $blue;
   		margin-bottom: .4em;
@@ -1768,6 +1817,7 @@ input:focus {
 	color: rgba(255, 255, 255, 0.5);
 	background-color: rgba(0, 0, 0, .2);
 	font-weight: 300;
+	z-index: 1;
 	@include respond-to($lg-desk) {
 		font-size: 14px;
 	}
@@ -1894,10 +1944,10 @@ input:focus {
 	}
 
 	&-bounceIn {
-		animation: bounceInDown .7s ease;
+		animation: bounceInDownC .7s ease;
 	}
 	&-bounceOut {
-		animation: bounceOutDown .7s ease;
+		animation: bounceOutDownC .7s ease;
 	}
 	&-overlay {
 		display: none;
@@ -2067,7 +2117,7 @@ input:focus {
 /*********************
 *** Animation
 **********************/
-@keyframes bounceInDown {
+@keyframes bounceInDownC {
     from, 60%, 75%, 90%, to {
         animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     }
@@ -2090,7 +2140,7 @@ input:focus {
     }
 }
 
-@keyframes bounceOutDown {
+@keyframes bounceOutDownC {
     20% {
         transform: translate3d(0, 10px, 0);
     }
@@ -2102,4 +2152,34 @@ input:focus {
         opacity: 0;
         transform: translate3d(0, 1000px, 0);
     }
+}
+
+.youtube {
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    transition: all 200ms ease-out;
+    cursor: pointer;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-size: 100%;
+}
+
+.youtube .play {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAERklEQVR4nOWbTWhcVRTHb1IJVoxGtNCNdal2JYJReC6GWuO83PM/59yUS3FRFARdFlwYP1CfiojQWt36sRCUurRIdVFXIn41lAoVdRGrG1M01YpKrWjiYmaSl8ybZJL3cd+YA//NLObd3++eO8x79z5jSq5Gw+8kov0AP8vMR5l1BtBZQM4B8ks75wCdZdYZZj5qLZ4hov2Nht9Z9vhKKSIaB/gI4M4w62KeAO6Mte4lYOq20FxrlqqOibhHmeWbvNC9ZfDX1mLae391aN6limO/gwgvAPJbWeAZuSDingdwXTBw7/0IsyaA/Fkh+KqOkD+YNfHej1QKD+y7iVlOhgLvFqFfNJvNGyuBJ+KDAF8MDd0tgS8y64OlgSdJMsysL4cG7SOHkyQZLhTee7+d2R2rAVy/S+Jd7/32ouBHAP4gNNRGQyTHc/84NhqNywZp5rvjjnnvt21aABFeCQ+RLwAf2hQ8s7sv9OCLk6AHNgQvIrvbfzKCD76g/O6cu7lf/iER/aQGgy448pExZmhdegAPhR9sObFWH1gT3lp7DaA/5bkIgJhZPgsNmz02novj+KqeApj1ubwXWe4kdyeznAgNvTpE/HQmvKqOMeuFogTUVQSRno+iaLRLAJF7uIgL9O4ubgL8aWgB7S44mNX+35YpICUiAvS9sBLkq1WzT+NFffl6AuoiApi6NT37h6sWkBIRZGkQ8YtLgyji6e1mBYTqCEBPG2Naz+0BWQgtoGoRgCzEsd9hAN1X5BfnFZASUfrSAFQNsyZ1FJASUVpHiLinDJG8U2cBZYogkrcNs5waBAGdstbeU9zdqpw0gPwwSAI6VUxHyFlDpOcHUUBBIuYNs14aZAE5RVwyzPr3/0EAEY0TyfGNjBWQvwZ+CTSbehfAH29mrID8bET0+0EUkAd8WYDOmqJ3ecsG30yr9wqRfm6Y+a1BEFDEjHfHvWmY9ck6CygHvBVr8Xhtb4ZE5HZA3y8DvBNA1TjnrmXWf+sioMwZX5V/VHXMGGMMoKdDCxCRvRWBdzKzdHEO+EisilbPyopHYqp6S9UCAsz4iojI7hUDAtyXVQgIDd6KnOoaWNkbI6FaPSuZGyMArsi7MZoloB4zviI/Nhr3X95jltwTRQmoIfgisy5ai+me67OI7fE4nrqjrqfK1t0eby0FPRB6oGVlchL3rgnfrq19RKbVBdhV9IOSwJmfmJi4vi/4ThERitwyCxVAFqydshuCX5awhQ9KtmuIWd8IDZED/nXT77rvVVv6sHRKwjYi91poqP7Dr+Y6JJ1VSZIMA3wkPNy6bX+o8Bcm0sXMdwM8Fxo0A3xORPaWBp6uPXsmbxCRD0NDL0dOANhVCXy6iAjMcjbcrMt3RITKwdMVRdFo+y5yvkL4eWZ+zHt/ZVD4dEVRNGotpst+dZZZH8k86lqn2pIvT/eqrNfn2xuyqYPZ8mv7s8pfn/8Pybm4TIjanscAAAAASUVORK5CYII=") no-repeat center center;
+    background-size: 64px 64px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: .8;
+    filter: alpha(opacity=80);
+    transition: all 0.2s ease-out;
+}
+
+.youtube .play:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
 }
