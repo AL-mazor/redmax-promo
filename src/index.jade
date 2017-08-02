@@ -6,7 +6,7 @@ html
 		meta(name="description", content="Современное IPTV от RedMax - 450 HD каналов и огромная коллекция фильмов. Закажи подключение сейчас и получи бесплатный месяц использования!")
 		meta(name="yandex-verification", content="133bc8fcd136d7e3")
 		link(rel="icon", href="img/favicon.png" type="image/x-icon")
-		link(rel="stylesheet", href="style.css?v=1.02")
+		link(rel="stylesheet", href="style.css?v=1.07")
 		link(rel="stylesheet", href="animate.css")
 
 		title Современное IPTV в Израиле - цифровое телевидение RedMax
@@ -33,7 +33,9 @@ html
 								a(href="#feedbacks") Отзывы
 							li.primary-nav--item
 								a(href="#cta") Контакты
-					span.btn.btn-sm.btn-blue.btn-pop-up Смотреть RedMax.TV
+					span.contact
+						span 03-376-0794
+						span.btn-pop-up-welcome Заказать обратный звонок
 					span.burger
 						i
 						i
@@ -63,15 +65,32 @@ html
 					.row
 						+offer1('ЛЕГКОСТЬ ПОДКЛЮЧЕНИЯ', 'Возможность смотреть любимые телепередачи везде, где есть интернет: дома, в офисе, в загородном коттедже.')
 						+offer2('ОПТИМАЛЬНЫЕ ПАКЕТЫ' , 'Подборка лучших русских и мировых телеканалов по самым выгодным ценам.')
-			section#videos.row
-				.video-block.video-block-main
-					.youtube#CD4V9uoY2I4.wow.fadeIn
-					//iframe(src="https://www.youtube.com/embed/CD4V9uoY2I4?rel=0?ecver=1", frameborder="0", allowfullscreen).wow.fadeIn
-				.video-block.video-block-additional
-					.video-block-additional-two
-						.youtube#Itv-gSCv3p4.wow.fadeIn(data-wow-delay="0.2s")
-					.video-block-additional-two
-						.youtube#l7GlExx5-Bk.wow.fadeIn
+			section#videos
+				.about-us
+					.container
+						.about-us--block.col-4-10.wow.fadeInLeft
+							h2.about-us--title 
+								span.highlight RedMax.TV
+								|–
+								br
+								| современное цифровое телевидение. № 1 в Израиле.
+							p.about-us--text Высокое качество изображения и многоканальный цифровой звук. Популярные российские, израильские и международные телеканалы. Недорогие услуги скоростного интернета (совместно с компанией «InterHost»). Полное лицензирование медийной деятельности.
+							ul.stats
+								li.stats--item
+									span.stats--num.wow.fadeIn(data-wow-delay="0.1s")
+										span.timer(data-from="0" data-to="3" data-refresh-interval="100") 3
+										span  года
+									span.stats--text безупречной работы
+								li.stats--item.wow.fadeIn(data-wow-delay="0.3s")
+									span.stats--num.timer(data-from="0" data-to="24000") 24000
+									span.stats--text постоянных клиентов
+								li.stats--item.wow.fadeIn(data-wow-delay="0.5s")
+									span.stats--num.timer(data-from="0" data-to="200") 200
+									span.stats--text популярных каналов
+							.btn-row
+								.btn.btn-lg.btn-red.btn-pop-up Смотреть RedMax.TV
+						.youtube--tv
+							.youtube#CD4V9uoY2I4.wow.fadeIn
 
 
 			section#advantages.advantages
@@ -127,7 +146,7 @@ html
 								span.highlight Презентация 
 								br
 								|RedMax TV
-							p.adv--desc.info-block--desc Оцени качество RedMax.TV ещё до оплаты. Мы произведём презентацию на дому или в офисе
+							p.adv--desc.info-block--desc Оцени качество RedMax.TV. Мы произведём презентацию на дому или в офисе
 			section#prices.prices
 				.container
 					h2.heading-block.heading-block-sm.heading-block-center
@@ -169,27 +188,19 @@ html
 				.about-us
 					.container
 						.about-us--block.col-4-10.wow.fadeInLeft
-							h2.about-us--title 
-								span.highlight RedMax.TV
-								|–
+							h2.heading-block--title
+								|Сотрудничество с
 								br
-								| современное цифровое телевидение. № 1 в Израиле.
-							p.about-us--text Высокое качество изображения и многоканальный цифровой звук. Популярные российские, израильские и международные телеканалы. Недорогие услуги скоростного интернета (совместно с компанией «InterHost»). Полное лицензирование медийной деятельности.
-							ul.stats
-								li.stats--item
-									span.stats--num.wow.fadeIn(data-wow-delay="0.1s")
-										span.timer(data-from="0" data-to="3" data-refresh-interval="100") 3
-										span  года
-									span.stats--text безупречной работы
-								li.stats--item.wow.fadeIn(data-wow-delay="0.3s")
-									span.stats--num.timer(data-from="0" data-to="24000") 24000
-									span.stats--text постоянных клиентов
-								li.stats--item.wow.fadeIn(data-wow-delay="0.5s")
-									span.stats--num.timer(data-from="0" data-to="200") 200
-									span.stats--text популярных каналов
+								span.highlight «RedMax TV»
+							p.about-us--text это своевременный заказ подключения и быстрая установка оборудования, выгодные цены, постоянные акции, скидки, реклама в Израиле, партнерская программа, высокое качество и стабильная техническая поддержка.
+							ul.about-us--list-type
+								li Отличное HD качество картинки и звука.
+								li Запись онлайн трансляций программ.
+								li Остановка трансляции на время.
+								li Интерактивность.
+								li Нет необходимости в ТВ-тюнере.
 							.btn-row
-								.btn.btn-lg.btn-red.btn-pop-up Смотреть RedMax.TV
-								.simple-btn.btn-pop-up-welcome Пригласить друга
+								.btn.btn-lg.btn-red.btn-pop-up Заказать подключение
 						.about-us--tv.wow.fadeIn(data-wow-delay="0.5s")
 							img(src="img/devices-tv.png", alt="")
 						.about-us--phone.wow.fadeInLeft(data-wow-delay="0.5s")
@@ -220,7 +231,7 @@ html
 							|Red
 							span.highlight max
 						span.heading-block--title.cta--title.wow.fadeIn Смотри бесплатно любимые шоу и сериалы.
-						span.heading-block--subtitle.cta--subtitle.wow.fadeIn До конца года - месяц цифрового телевиденья в подарок*
+						span.heading-block--subtitle.cta--subtitle.wow.fadeIn До конца года - месяц цифрового телевидения в подарок*
 						form.cta-form(method="post", action="send.php")
 							.input-field.wow.fadeIn(data-wow-offset="100")
 								input(name="name", type="text", placeholder="Введи свое имя")
@@ -252,4 +263,4 @@ html
 		script(type="text/javascript", src="js/main.js")
 		script(type="text/javascript", src="js/wow.min.js")
 		script(type="text/javascript", src="js/jquery.parallax.js")
-		script(type="text/javascript", src="js/jquery.countTo.js")
+		script(type="text/javascript", src="js/jquery.countTo.js?v=1.01")

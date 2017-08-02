@@ -9,6 +9,7 @@ var gulp = require('gulp'),
 	filter = require('gulp-filter'),
 	merge = require('merge-stream'),
 	csso = require('gulp-csso'),
+	uglify = require('gulp-uglify'),
 	imagemin = require('gulp-imagemin');
 
 // pathes to files
@@ -46,6 +47,7 @@ gulp.task('html', function () {
 gulp.task('scripts', function() {
 	return gulp.src(paths.scripts)
 		.pipe(concat('main.js'))
+		.pipe(uglify())
 		.pipe(gulp.dest('dist/js'))
 		.pipe(sync.stream());
 });

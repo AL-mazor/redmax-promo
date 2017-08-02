@@ -305,8 +305,14 @@ h1, h2, h3, h4, h5, h6 {margin: 0;}
 	&--nav {
 		float: right;
 		//padding: 50px 0;
-		margin-top: 70px;
+		margin-top: 50px;
 		transition: .3s;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
 		@include respond-to($lg-desk) {
 			margin-top: 50px;
 		}
@@ -314,10 +320,21 @@ h1, h2, h3, h4, h5, h6 {margin: 0;}
 			margin-top: 24px;
 		}
 		&:after {@include clearfix;}
-		.btn {
+		.contact {
 			float: left;
+			text-align: center;
 			@include respond-to($lg-mob-port) {
 				display: none;
+			}
+			span {
+				color: $blue;
+				font-size: 34px;
+			}
+			span.btn-pop-up-welcome {
+				color: $red;
+				cursor: pointer;
+				font-size: initial;
+				display: block;
 			}
 		}
 	}
@@ -355,7 +372,7 @@ h1, h2, h3, h4, h5, h6 {margin: 0;}
 			}
 		}
 		.header--nav {
-			margin-top: 25px;
+			margin-top: 15px;
 		}
 	}
 	&-active {
@@ -510,8 +527,8 @@ h1, h2, h3, h4, h5, h6 {margin: 0;}
     background: url(img/bg-anim.png) no-repeat;
     background-position: center top;
     z-index: 1;
-    width: 96%;
-    height: 96%;
+    width: 99%;
+    height: 98%;
 	background-size: contain;
     transform: translateX(2%);
 	@include respond-to($lg-mob) {
@@ -524,8 +541,8 @@ h1, h2, h3, h4, h5, h6 {margin: 0;}
     background: url(img/bg-anim-1.png) no-repeat;
     background-position: center top;
     z-index: 1;
-    width: 96%;
-    height: 96%;
+    width: 99%;
+    height: 98%;
 	background-size: 100% 100%;
     transform: translateX(2%);
 	@include respond-to($lg-mob) {
@@ -780,7 +797,7 @@ h1, h2, h3, h4, h5, h6 {margin: 0;}
 		
 	}
 	&--text {
-		margin-bottom: 2em;
+		margin-bottom: 0.8em;
 	}
 	.btn-lg {
 		@include respond-to($lg-mob) {
@@ -821,6 +838,23 @@ h1, h2, h3, h4, h5, h6 {margin: 0;}
 		}
 		@include respond-to($tab) {
 			display: none;
+		}
+	}
+	&--list-type {
+		margin-left: 25px;
+		margin-top: 10px;
+		li {
+			margin-bottom: 0.5em;
+			position: relative;
+			&:before {
+				content: '';
+				background: url(./img/check-item.png) no-repeat;
+				width: 15px;
+				height: 15px;
+				position: absolute;
+				left: -25px;
+    			top: 5px;
+			}
 		}
 	}
 }	
@@ -934,9 +968,22 @@ h1, h2, h3, h4, h5, h6 {margin: 0;}
 /*********************
 *** Videos
 **********************/
-#videos {
-	overflow: hidden;
-}
+	.youtube--tv {
+		position: absolute;
+		top: 0; right: 0;
+		width: 800px; height: 100%;
+		img {width: 100%;}
+		@include respond-to($lg-desk) {
+	        top: 40px;
+		    width: 600px;
+		}
+		@include respond-to($sm-desk) {
+			width: 480px;
+		}
+		@include respond-to($tab) {
+			display: none;
+		}
+	}
 .video-block {
 	float: left;
 	padding-bottom: 37.5%;
