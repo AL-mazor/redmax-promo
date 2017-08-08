@@ -15,7 +15,7 @@ var gulp = require('gulp'),
 // pathes to files
 var paths = {
 	scss: ['src/css/*.scss' , 'src/*.scss'],
-	jade: ['src/*.jade'],
+	jade: ['src/*.jade', 'src/template/*.jade'],
 	scripts: ['src/js/*.js'],
 	images: ['src/img/*.png', 'src/img/*.jpg', 'src/img/*.jpeg']
 }
@@ -35,7 +35,7 @@ gulp.task('css', function () {
 
 // Jade to Html
 gulp.task('html', function () {
-	return gulp.src(paths.jade)
+	return gulp.src(paths.jade[0])
 		.pipe(jade({
 			pretty: true
 		}))
